@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Sheeja Manchira Krishnan" />
+
+<meta name="date" content="2019-08-05" />
+
+<title>User Guide</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">User Guide</h1>
+<h4 class="author">Sheeja Manchira Krishnan</h4>
+<h4 class="date">2019-08-05</h4>
+
+
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(valueEQ5D)</code></pre></div>
+<div id="valueeq5d" class="section level2">
+<h2>valueEQ5D</h2>
+<p>EQ-5D is a standardized instrument developed by the EuroQol(R) Group as a measure of health-related quality of life that can be used in a wide range of health conditions and treatments (<a href="https://euroqol.org/eq-5d-instruments/" class="uri">https://euroqol.org/eq-5d-instruments/</a>). The EQ-5D consists of a descriptive system and a visual analog scale (VAS).</p>
+<p>The descriptive system comprises five dimensions: mobility, self-care, usual activities, pain/discomfort and anxiety/depression. The EQ-5D VAS records the patient’s self-rated health on a vertical visual analogue scale. This can be used as a quantitative measure of health outcome that reflects the patient’s own judgement. The scores on these five dimensions can be presented as a health profile or can be converted to a single summary index number (utility) reflecting preferability compared to other health profiles.</p>
+<p>Currently three versions of EQ-5D exist:</p>
+<p>EQ-5D with 3 levels of severity for each of the 5 dimensions: EQ-5D-3L EQ-5D with 5 levels of severity for each of the 5 dimensions: EQ-5D-5L EQ-5D for use in children: EQ-5D-Y</p>
+<p>This package can be used for valuing the adult EQ-5D descriptive system scores - both 5L and 3L for different countries. EQ-5D-5L scores can be valued for the following countries: Canada,China,England,Germany,Hong Kong,Indonesia,Ireland,Japan, Korea,Malaysia,Netherlands,Poland,Portugal,Spain,Taiwan,Thailand,and Uruguay.</p>
+<pre><code>Canada: Xie et al (2016) &lt;doi:10.1097/MLR.0000000000000447&gt;
+China:Luo et al (2017) &lt;doi:10.1016/j.jval.2016.11.016&gt;
+England: Devlin et al (2018) &lt;doi:10.1002/hec.3564&gt;
+Germany: Ludwig et al (2018) &lt;doi:10.1007/s40273-018-0615-8&gt;
+Hong Kong: Wong et al (2018) &lt;doi:10.1007/s40271-017-0278-0&gt;
+Indonesia: Purba et al (2017) &lt;doi:10.1007/s40273-017-0538-9&gt;
+Ireland: Hobbins et al (2016) &lt;doi:10.1007/s40273-018-0690-x&gt;
+Japan: Shiroiwa, et al (2016) &lt;doi:10.1016/j.jval.2016.03.1834&gt;
+Korea: Kim et al (2016) &lt;doi:10.1007/s11136-015-1205-2&gt;
+Malaysia: Shafie  et al (2019) &lt;doi:10.1007/s40273-018-0758-7&gt;
+Netherlands: Versteegh et al (2016) &lt;doi:10.1016/j.jval.2016.01.003&gt;
+Poland: Golicki et al &lt;doi:10.1007/s40273-019-00811-7&gt;
+Portugal:Ferreira1 et al (2014) &lt;doi:10.1007/s11136-019-02226-5&gt;
+Spain: Ramos-Goñiet et al (2018) &lt;https://doi.org/10.1016/j.jval.2017.10.023&gt;
+Taiwan:  Lin et al (2018)  &lt;https://doi.org/10.1371/journal.pone.0209344&gt;
+Thailand: Pattanaphesaj et al (2018) &lt;doi:10.1080/14737167.2018&gt;
+Uruguay: Augustovski et al (2016) &lt;doi:10.1007/s11136-015-1086-4&gt;</code></pre>
+<p>EQ-5D-3L scores can be valued for the countries Arrgentina, Australia,Belgium, Brazil, Canada, Chile, Denmark, Europe, Finland, France, Germany, Italy,Japan,Malaysia, Netherlands, New Zealand,Poland,Portugal,Singapre,Slovenia,Spain,Sri Lanka, South Korea, Sweden, Taiwan,Thailand,Trinidad and Tobago, UK,USA,and Zimbabwe.</p>
+<pre><code>Argentina: Augustovski et al (2009) &lt;doi:10.1111/j.1524-4733.2008.00468.x&gt; 
+Australia: Viney et al (2011) &lt;doi:10.1016/j.jval.2011.04.009&gt;
+Belgium: Cleemput et al (2010) &lt;doi:10.1007/s10198-009-0167-0&gt;
+Brazil: Santos et al (2016) &lt;doi:10.1177/0272989X15613521&gt;
+Canada: Bansback et al (2012) &lt;https://doi.org/10.1371/journal.pone.0031115&gt;
+Chile: Zarate et al (2011) &lt;doi:10.1016/j.jval.2011.09.002.
+China: Liu et al (2014) &lt;doi:10.1016/j.jval.2014.05.007&gt;
+Denmark TTO: Wittrup-Jensen et al (2009) &lt;doi:10.1177/1403494809105287&gt;
+Denmark VAS: Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+Europe: Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+Finland: Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+France: Chevalier et al (2013) &lt;doi:10.1007/s10198-011-0351-x&gt;
+Germany (TTO): Greiner et al (2005) &lt;doi:10.1007/s10198-004-0264-z&gt;
+Germany (VAS): Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+Italy: Scalone et al (2013) &lt;http://dx.doi.org/10.1016/j.jval.2013.04.008&gt;
+Japan: Tsuchiya et al (2002) &lt;https://doi.org/10.1002/hec.673&gt;
+Malaysia: Yusof et al (2019) &lt;doi:10.1016/j.jval.2011.11.024&gt;
+Netherlands: Lamers et al &lt;doi:10.1002/hec.1124&gt;
+New Zealand: Devlin et al &lt;doi:10.1002/hec.741&gt;
+Poland: Golicki et al &lt;https://doi.org/10.1111/j.1524-4733.2009.00596.x&gt;
+Portugal: Ferreira et al &lt;doi:10.1007/s11136-013-0448-z&gt;
+Singapore: Nan Luo et al &lt;doi:10.1007/s40273-014-0142-1&gt;
+Slovenia: Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+Spain (TTO): Badia et al (2001) &lt;doi:10.1177/0272989X0102100102&gt;
+Spain (VAS): Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+Sri Lanka: Kularatna et al (2015) &lt;doi:10.1007/s11136-014-0906-2&gt;
+South Korea: Lee et al &lt;doi:10.1111/j.1524-4733.2009.00579.x&gt;
+Sweden: Burström et al (2014) &lt;doi:10.1007/s11136-013-0496-4&gt;
+Taiwan: Lee et al (2013) &lt;http://dx.doi.org/10.1016/j.jfma.2012.12.015&gt;
+Thailand: Tongsiri et al (2011) &lt;doi:10.1016/j.jval.2011.06.005&gt;
+Trinidad and Tobago: Bailey et al (2016) &lt;http://dx.doi.org/10.1016/j.vhri.2016.07.010&gt;
+UK (TTO): Dolan et al (1997) &lt;http://dx.doi.org/10.1097/00005650-199711000-00002&gt;
+UK (VAS): Szende et al (2014) &lt;doi:10.1007/978-94-007-7596-1&gt;
+USA: Shaw et al (2005) &lt;doi:10.1097/00005650-200503000-00003&gt;
+Zimbabwe: Jelsma et al (2003) &lt;https://doi.org/10.1186/1478-7954-1-11&gt;</code></pre>
+<p>The 5L descriptive scores can be mapped to 3L index values for 10 countries using the NICE recommended Van Hout et al. method.</p>
+<p>If the individual responses are in column formats (e.g. in csv) they can be used as arguments in the methods.</p>
+<p>In brief, for valuing EQ-5D-3L responses from individual responses to the descriptive system, use “valueEQ5D3LIindscores”;for valuing EQ-5D-5L responses from descriptive system, use “valueEQ5D5LIindscores”; and for mapping EQ-5D-5L responses from descriptive system to EQ-5D-3L index values, use “eq5dmap5Lto3LIndscores”. The arguments for all these three parameters will be country names and followed by the five individual responses.</p>
+<p>If the requirement is to get the summary statistics of collected EQ-5D responses from many individuals with conditions on gender and age use these methods: valuing EQ-5D-3L responses use “valueEQ5D3L”;for valuing EQ-5D-5L responses, use “valueEQ5D5L”; and for mapping EQ-5D-5L responses to EQ-5D-3L index values, use “eq5dmap5Lto3L”. The arguments for all these three parameters will be country names and followed by the five column names of the EQ-5D responses and the data containing these EQ-5D responses.</p>
+<p>EQ-5D-5L responses for England are converted to index values using Devlin et al. method. EQ-5D-3L responses for England are converted to index values using Dolan et al. method. EQ-5D-5L responses for England are mapped to EQ-5D-3L index values using Van Hout et al. method.</p>
+<p>Whenever the EQ-5D-5L responses are taken as input parameters, code checks if the input values are with in the bounds, i.e for 3L they have to be between 1 and 3 and for 5L between 1 and 5, throws error otherwise.</p>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>For demonstration purposes, a simulated data set representing treatment and control arm of randomised controlled trial will be used. If any of the responses are invalid i.e other than 1 to 5 for EQ-5D-5L or 1 to 3 for EQ-5D-3L, it will throw error and return -1.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## EQ-5D-3L data
+ <span class="kw">set.seed</span>(<span class="dv">17</span>)
+  EQ5D3Ldata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">age=</span><span class="kw">abs</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">60</span>, <span class="dv">20</span>)),
+                           <span class="dt">sex=</span><span class="kw">factor</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">arm=</span><span class="kw">factor</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Intervention&quot;</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d3L.q1=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d3L.q2=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d3L.q3=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d3L.q4=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d3L.q5=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)))
+  
+  ## EQ-5D-5L data
+ <span class="kw">set.seed</span>(<span class="dv">17</span>)
+  EQ5D5Ldata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">age=</span><span class="kw">abs</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">60</span>, <span class="dv">20</span>)),
+                           <span class="dt">sex=</span><span class="kw">factor</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">arm=</span><span class="kw">factor</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Intervention&quot;</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d5L.q1=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d5L.q2=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d5L.q3=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d5L.q4=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)),
+                           <span class="dt">eq5d5L.q5=</span>(<span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dv">10</span>, <span class="dt">replace=</span>T)))</code></pre></div>
+</div>
+<div id="examples--valuing-eq-5d-3l" class="section level2">
+<h2>Examples- Valuing EQ-5D-3L</h2>
+<p>Each of the below calls will give same answer while valuing the EQ-5D-3L individual score 1,2,3,2,2 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Valuing EQ-5D-3L individual score
+ <span class="kw">valueEQ5D3LIndscores</span>(<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>)
+<span class="co">#&gt; [1] 0.258</span>
+ <span class="kw">valueEQ5D3LIndscores</span>(<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;VAS&quot;</span>,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>))
+<span class="co">#&gt; [1] 0.309</span>
+ <span class="kw">valueEQ5D3LIndscores</span>(<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="dv">12322</span>)
+<span class="co">#&gt; [1] 0.258</span></code></pre></div>
+<p>When the data is in column format as in example below, use the ‘valueEQ5D3L’ to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+result1&lt;-<span class="kw">valueEQ5D3L</span>(EQ5D3Ldata,<span class="st">&quot;eq5d3L.q1&quot;</span>,<span class="st">&quot;eq5d3L.q2&quot;</span>,<span class="st">&quot;eq5d3L.q3&quot;</span>,<span class="st">&quot;eq5d3L.q4&quot;</span>,<span class="st">&quot;eq5d3L.q5&quot;</span>,<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="ot">NULL</span>,<span class="ot">NULL</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>The results can be called using the stats,frequencyTable ,histogram and modifiedData which are given below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result1<span class="op">$</span>stats
+<span class="co">#&gt;            Sum   Mean        SD Median  Mode         SE Minimum Maximum</span>
+<span class="co">#&gt; EQ-5D-3L 2.645 0.2645 0.2975441  0.212 0.159 0.09409171  -0.127   0.744</span>
+<span class="co">#&gt;          Count</span>
+<span class="co">#&gt; EQ-5D-3L    10</span>
+result1<span class="op">$</span>frequencyTable
+<span class="co">#&gt;                     scores                Freq Cumul relative</span>
+<span class="co">#&gt; -0.127              &quot;-0.127&quot;              &quot;1&quot;  &quot;1&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; -0.0410000000000001 &quot;-0.0410000000000001&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; 0.051               &quot;0.051&quot;               &quot;1&quot;  &quot;3&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; 0.159               &quot;0.159&quot;               &quot;2&quot;  &quot;5&quot;   &quot;0.2&quot;   </span>
+<span class="co">#&gt; 0.265               &quot;0.265&quot;               &quot;1&quot;  &quot;6&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; 0.277               &quot;0.277&quot;               &quot;1&quot;  &quot;7&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; 0.414               &quot;0.414&quot;               &quot;1&quot;  &quot;8&quot;   &quot;0.1&quot;   </span>
+<span class="co">#&gt; 0.744               &quot;0.744&quot;               &quot;2&quot;  &quot;10&quot;  &quot;0.2&quot;</span>
+result1<span class="op">$</span>histogram
+<span class="co">#&gt; $breaks</span>
+<span class="co">#&gt; [1] -0.2  0.0  0.2  0.4  0.6  0.8</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $counts</span>
+<span class="co">#&gt; [1] 2 3 2 1 2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $density</span>
+<span class="co">#&gt; [1] 1.0 1.5 1.0 0.5 1.0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $mids</span>
+<span class="co">#&gt; [1] -0.1  0.1  0.3  0.5  0.7</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $xname</span>
+<span class="co">#&gt; [1] &quot;scores&quot;</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $equidist</span>
+<span class="co">#&gt; [1] TRUE</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attr(,&quot;class&quot;)</span>
+<span class="co">#&gt; [1] &quot;histogram&quot;</span>
+result1<span class="op">$</span>modifiedData
+<span class="co">#&gt;         age sex          arm eq5d3L.q1 eq5d3L.q2 eq5d3L.q3 eq5d3L.q4</span>
+<span class="co">#&gt; 1  39.69983   F      Control         3         3         1         1</span>
+<span class="co">#&gt; 2  58.40727   F      Control         2         1         2         3</span>
+<span class="co">#&gt; 3  55.34026   F Intervention         1         2         1         1</span>
+<span class="co">#&gt; 4  43.65464   F      Control         2         1         1         3</span>
+<span class="co">#&gt; 5  75.44182   F Intervention         1         2         1         1</span>
+<span class="co">#&gt; 6  56.68776   M      Control         1         3         2         2</span>
+<span class="co">#&gt; 7  79.45749   F Intervention         3         2         1         2</span>
+<span class="co">#&gt; 8  94.33068   F Intervention         3         1         1         1</span>
+<span class="co">#&gt; 9  65.10474   F Intervention         1         1         1         1</span>
+<span class="co">#&gt; 10 67.33162   M Intervention         2         1         2         3</span>
+<span class="co">#&gt;    eq5d3L.q5 EQ-5D-3L scores</span>
+<span class="co">#&gt; 1          2           0.051</span>
+<span class="co">#&gt; 2          1           0.159</span>
+<span class="co">#&gt; 3          2           0.744</span>
+<span class="co">#&gt; 4          3          -0.041</span>
+<span class="co">#&gt; 5          2           0.744</span>
+<span class="co">#&gt; 6          1           0.277</span>
+<span class="co">#&gt; 7          3          -0.127</span>
+<span class="co">#&gt; 8          2           0.265</span>
+<span class="co">#&gt; 9          3           0.414</span>
+<span class="co">#&gt; 10         1           0.159</span></code></pre></div>
+<p>Similarly, we can use the options to get the results for particular gender with given age ranges.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result2&lt;-<span class="kw">valueEQ5D3L</span>(EQ5D3Ldata,<span class="st">&quot;eq5d3L.q1&quot;</span>,<span class="st">&quot;eq5d3L.q2&quot;</span>,<span class="st">&quot;eq5d3L.q3&quot;</span>,<span class="st">&quot;eq5d3L.q4&quot;</span>,<span class="st">&quot;eq5d3L.q5&quot;</span>,<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="st">&quot;male&quot;</span>,<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">70</span>))</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result3&lt;-<span class="kw">valueEQ5D3L</span>(EQ5D3Ldata,<span class="st">&quot;eq5d3L.q1&quot;</span>,<span class="st">&quot;eq5d3L.q2&quot;</span>,<span class="st">&quot;eq5d3L.q3&quot;</span>,<span class="st">&quot;eq5d3L.q4&quot;</span>,<span class="st">&quot;eq5d3L.q5&quot;</span>,<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="st">&quot;male&quot;</span>,<span class="ot">NULL</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result4&lt;-<span class="kw">valueEQ5D3L</span>(EQ5D3Ldata,<span class="st">&quot;eq5d3L.q1&quot;</span>,<span class="st">&quot;eq5d3L.q2&quot;</span>,<span class="st">&quot;eq5d3L.q3&quot;</span>,<span class="st">&quot;eq5d3L.q4&quot;</span>,<span class="st">&quot;eq5d3L.q5&quot;</span>,<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;TTO&quot;</span>,<span class="ot">NULL</span>,<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">70</span>))</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="examples--valuing-eq-5d-5l" class="section level2">
+<h2>Examples- Valuing EQ-5D-5L</h2>
+<p>Similarly,each of the below calls values EQ-5D-5L individual score 1,2,3,4,5 for mobility, self care, social activity, pain and discomfort, and anxiety respectively. For EQ-5D-5L, no method to be given explicitly.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Valuing EQ-5D-5L individual score
+
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;England&quot;</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+<span class="co">#&gt; [1] 0.322</span>
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;England&quot;</span>,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))
+<span class="co">#&gt; [1] 0.322</span>
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;England&quot;</span>,<span class="dv">12345</span>)
+<span class="co">#&gt; [1] 0.322</span>
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;Germany&quot;</span>,<span class="dv">12345</span>)
+<span class="co">#&gt; [1] 0.141</span>
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;Spain&quot;</span>,<span class="dv">12345</span>)
+<span class="co">#&gt; [1] 0.309</span>
+<span class="kw">valueEQ5D5LIndscores</span>(<span class="st">&quot;Indonesia&quot;</span>,<span class="dv">12345</span>)
+<span class="co">#&gt; [1] 0.24</span></code></pre></div>
+<p>When the data is in column format as in example below, use the ‘valueEQ5D5L’ to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">valueEQ5D5L</span>(EQ5D5Ldata,<span class="st">&quot;eq5d5L.q1&quot;</span>,<span class="st">&quot;eq5d5L.q2&quot;</span>,<span class="st">&quot;eq5d5L.q3&quot;</span>,<span class="st">&quot;eq5d5L.q4&quot;</span>,<span class="st">&quot;eq5d5L.q5&quot;</span>,<span class="st">&quot;England&quot;</span>,<span class="ot">NULL</span>,<span class="ot">NULL</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;            Sum   Mean       SD Median  Mode         SE Minimum Maximum
+#&gt; EQ-5D-5L 4.464 0.4464 0.180179 0.4835 0.242 0.05697762   0.189   0.721
+#&gt;          Count
+#&gt; EQ-5D-5L    10
+#&gt; 
+#&gt; $frequencyTable
+#&gt;       scores  Freq Cumul relative
+#&gt; 0.189 &quot;0.189&quot; &quot;1&quot;  &quot;1&quot;   &quot;0.1&quot;   
+#&gt; 0.242 &quot;0.242&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.1&quot;   
+#&gt; 0.254 &quot;0.254&quot; &quot;1&quot;  &quot;3&quot;   &quot;0.1&quot;   
+#&gt; 0.355 &quot;0.355&quot; &quot;1&quot;  &quot;4&quot;   &quot;0.1&quot;   
+#&gt; 0.427 &quot;0.427&quot; &quot;1&quot;  &quot;5&quot;   &quot;0.1&quot;   
+#&gt; 0.54  &quot;0.54&quot;  &quot;1&quot;  &quot;6&quot;   &quot;0.1&quot;   
+#&gt; 0.553 &quot;0.553&quot; &quot;1&quot;  &quot;7&quot;   &quot;0.1&quot;   
+#&gt; 0.572 &quot;0.572&quot; &quot;1&quot;  &quot;8&quot;   &quot;0.1&quot;   
+#&gt; 0.611 &quot;0.611&quot; &quot;1&quot;  &quot;9&quot;   &quot;0.1&quot;   
+#&gt; 0.721 &quot;0.721&quot; &quot;1&quot;  &quot;10&quot;  &quot;0.1&quot;   
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+#&gt; 
+#&gt; $counts
+#&gt; [1] 1 2 1 1 3 1 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 1 2 1 1 3 1 1
+#&gt; 
+#&gt; $mids
+#&gt; [1] 0.15 0.25 0.35 0.45 0.55 0.65 0.75
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 1  39.69983   F      Control         4         5         1         2
+#&gt; 2  58.40727   F      Control         4         1         4         4
+#&gt; 3  55.34026   F Intervention         2         3         1         2
+#&gt; 4  43.65464   F      Control         3         2         1         5
+#&gt; 5  75.44182   F Intervention         2         4         1         2
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 7  79.45749   F Intervention         5         4         1         3
+#&gt; 8  94.33068   F Intervention         5         1         2         1
+#&gt; 9  65.10474   F Intervention         2         2         1         2
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 EQ-5D-5L scores
+#&gt; 1          4           0.242
+#&gt; 2          1           0.355
+#&gt; 3          2           0.721
+#&gt; 4          4           0.254
+#&gt; 5          3           0.611
+#&gt; 6          2           0.553
+#&gt; 7          5           0.189
+#&gt; 8          3           0.572
+#&gt; 9          5           0.540
+#&gt; 10         1           0.427
+valueEQ5D5L(EQ5D5Ldata,&quot;eq5d5L.q1&quot;,&quot;eq5d5L.q2&quot;,&quot;eq5d5L.q3&quot;,&quot;eq5d5L.q4&quot;,&quot;eq5d5L.q5&quot;,&quot;England&quot;,&quot;male&quot;,c(10,70))</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;           Sum Mean         SD Median  Mode    SE Minimum Maximum Count
+#&gt; EQ-5D-5L 0.98 0.49 0.08909545   0.49 0.553 0.063   0.427   0.553     2
+#&gt; 
+#&gt; $frequencyTable
+#&gt;       scores  Freq Cumul relative
+#&gt; 0.427 &quot;0.427&quot; &quot;1&quot;  &quot;1&quot;   &quot;0.5&quot;   
+#&gt; 0.553 &quot;0.553&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.5&quot;   
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] 0.40 0.45 0.50 0.55 0.60
+#&gt; 
+#&gt; $counts
+#&gt; [1] 1 0 0 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 10  0  0 10
+#&gt; 
+#&gt; $mids
+#&gt; [1] 0.425 0.475 0.525 0.575
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 EQ-5D-5L scores
+#&gt; 6          2           0.553
+#&gt; 10         1           0.427
+valueEQ5D5L(EQ5D5Ldata,&quot;eq5d5L.q1&quot;,&quot;eq5d5L.q2&quot;,&quot;eq5d5L.q3&quot;,&quot;eq5d5L.q4&quot;,&quot;eq5d5L.q5&quot;,&quot;Indonesia&quot;,&quot;male&quot;,NULL)</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;            Sum  Mean         SD Median  Mode    SE Minimum Maximum Count
+#&gt; EQ-5D-5L 0.564 0.282 0.02969848  0.282 0.303 0.021   0.261   0.303     2
+#&gt; 
+#&gt; $frequencyTable
+#&gt;       scores  Freq Cumul relative
+#&gt; 0.261 &quot;0.261&quot; &quot;1&quot;  &quot;1&quot;   &quot;0.5&quot;   
+#&gt; 0.303 &quot;0.303&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.5&quot;   
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] 0.26 0.28 0.30 0.32
+#&gt; 
+#&gt; $counts
+#&gt; [1] 1 0 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 25  0 25
+#&gt; 
+#&gt; $mids
+#&gt; [1] 0.27 0.29 0.31
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 EQ-5D-5L scores
+#&gt; 6          2           0.303
+#&gt; 10         1           0.261
+valueEQ5D5L(EQ5D5Ldata,&quot;eq5d5L.q1&quot;,&quot;eq5d5L.q2&quot;,&quot;eq5d5L.q3&quot;,&quot;eq5d5L.q4&quot;,&quot;eq5d5L.q5&quot;,&quot;Ireland&quot;,NULL,c(10,70))</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;            Sum      Mean        SD Median   Mode        SE Minimum Maximum
+#&gt; EQ-5D-5L 1.527 0.2181429 0.3094104  0.239 -0.105 0.1169461  -0.197   0.701
+#&gt;          Count
+#&gt; EQ-5D-5L     7
+#&gt; 
+#&gt; $frequencyTable
+#&gt;        scores   Freq Cumul relative           
+#&gt; -0.197 &quot;-0.197&quot; &quot;1&quot;  &quot;1&quot;   &quot;0.142857142857143&quot;
+#&gt; -0.105 &quot;-0.105&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.142857142857143&quot;
+#&gt; 0.168  &quot;0.168&quot;  &quot;1&quot;  &quot;3&quot;   &quot;0.142857142857143&quot;
+#&gt; 0.239  &quot;0.239&quot;  &quot;1&quot;  &quot;4&quot;   &quot;0.142857142857143&quot;
+#&gt; 0.258  &quot;0.258&quot;  &quot;1&quot;  &quot;5&quot;   &quot;0.142857142857143&quot;
+#&gt; 0.463  &quot;0.463&quot;  &quot;1&quot;  &quot;6&quot;   &quot;0.142857142857143&quot;
+#&gt; 0.701  &quot;0.701&quot;  &quot;1&quot;  &quot;7&quot;   &quot;0.142857142857143&quot;
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] -0.2  0.0  0.2  0.4  0.6  0.8
+#&gt; 
+#&gt; $counts
+#&gt; [1] 2 1 2 1 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 1.4285714 0.7142857 1.4285714 0.7142857 0.7142857
+#&gt; 
+#&gt; $mids
+#&gt; [1] -0.1  0.1  0.3  0.5  0.7
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 1  39.69983   F      Control         4         5         1         2
+#&gt; 2  58.40727   F      Control         4         1         4         4
+#&gt; 3  55.34026   F Intervention         2         3         1         2
+#&gt; 4  43.65464   F      Control         3         2         1         5
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 9  65.10474   F Intervention         2         2         1         2
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 EQ-5D-5L scores
+#&gt; 1          4          -0.105
+#&gt; 2          1           0.258
+#&gt; 3          2           0.701
+#&gt; 4          4          -0.197
+#&gt; 6          2           0.463
+#&gt; 9          5           0.168
+#&gt; 10         1           0.239</code></pre>
+</div>
+<div id="examples--mapping-eq-5d-5l-scores-to-eq-5d-3l-index-values-for-uk-and-other-countries" class="section level2">
+<h2>Examples- Mapping EQ-5D-5L scores to EQ-5D-3L index values for UK and other countries</h2>
+<p>Each of the below calls will give same EQ-5d-3L index values while valuing the EQ-5D-5L individual score 1,2,3,4,5 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Valuing EQ-5D-5L individual score
+
+<span class="kw">eq5dmap5Lto3LIndscores</span>(<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;CW&quot;</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+<span class="co">#&gt; [1] 0.06333624</span>
+<span class="kw">eq5dmap5Lto3LIndscores</span>(<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;CW&quot;</span>,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>))
+<span class="co">#&gt; [1] 0.06333624</span>
+<span class="kw">eq5dmap5Lto3LIndscores</span>(<span class="st">&quot;Denmark&quot;</span>,<span class="st">&quot;CW&quot;</span>,<span class="dv">12345</span>)
+<span class="co">#&gt; [1] 0.2231107</span></code></pre></div>
+<p>When the data is in column format as in example below, use the ‘eq5dmap5Lto3L’ to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+ <span class="kw">eq5dmap5Lto3L</span>(EQ5D5Ldata,<span class="st">&quot;eq5d5L.q1&quot;</span>,<span class="st">&quot;eq5d5L.q2&quot;</span>,<span class="st">&quot;eq5d5L.q3&quot;</span>,<span class="st">&quot;eq5d5L.q4&quot;</span>,<span class="st">&quot;eq5d5L.q5&quot;</span>,<span class="st">&quot;UK&quot;</span>,<span class="st">&quot;CW&quot;</span>,<span class="ot">NULL</span>,<span class="ot">NULL</span>)</code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAAvVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrY6AAA6ADo6OgA6Ojo6OmY6OpA6ZpA6ZrY6kLY6kNtmAABmADpmOgBmOjpmZjpmkGZmkLZmkNtmtttmtv+QOgCQZgCQZjqQkDqQkGaQkLaQtpCQttuQtv+Q29uQ2/+2ZgC2Zjq2ZpC2kDq2kGa229u22/+2/7a2///bkDrbkGbbtmbbtpDb27bb29vb2//b/7bb////tmb/25D/27b//7b//9v///8fq+f/AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAKwUlEQVR4nO2dbWPbthWFqdSuVadpJjXZ1sjNumYzs3Ve2DhtRVvi//9ZxTtBSuQhBVhhwHM+yDIJXAIPLwGQuAKziupV9rkLMHUREBABAREQEAEBERAQAQEREBABAREQEAEBERAQAQEREBABAREQEAEBERAQAQEREBABAREQEAEBERAQAQEREBABAREQEAEBERAQAQEREFC2FR/7m+xKflxuG/v2//kQ+Wj798sse6m+FpmVOur+/rX4+vyNXwKT5Mp9W3x35+1+fCu2/H2rEi5uG4c5qIpRnj0bW6UeQI+vRltDKmU1V+prE9DulfnnwkOQtwEJIBu3d7e2e88EKIY1JK8mDUCiAFb1MQWB1UHimoTY9kZ+bA4BdSqGB/16bVw5t8WVzv+VcmVxiYhzfKsOIwr186vs2V11L0/+t7eqQlf319niTfXrUqSqj+EM5F4VC7+sop4LeXXdLzMHpXpYZhu3XyX+9CpzZ3L/y3NRXJ3muAeJrf9W5dUlF2V6pwHJWixebtURxP8itSmK4Vcq6qZebUCFO48WUFFfCPpEL67rzZfb0p1Z4/NZdt30hNpAFyBh12wVNtzFISw/F0W88xL7u1XGXGXsAlQ7nXNRYceU8+KDKtrKeGHlyIhiity2XtZ1DSDpBdvqozqPmqegrA+2UgautqJQBtDlXfWbyPW1OpErdeCVzKtd33qCb+DoJbZRvmc253WKvK6fo9nwO1ke5R+dgESL5pf8vTnzwu9VidWZ+XnpoOumRl3arl4tQGLLxf9cAWVhjNvlxvQHZUADshfAp1+upQF9evWnPr7vt/a6PAbIS12n2L9divrdG7wOkI9C2njZB2ijzs9V5ZfcNG2FPf3Nds0vpKpXC5B2Rd3i5OYCvbQ9qf3eqOv+rTWg/UB/1lX2DQwEpK4Be1ZNPg+Qv/t+2XLMBqCFaRldLyRL7rxC5ZFu6lo91aSZAtt6tdugR93fLv5lOFjvl5en/e4DkkQv/vlp3QnIN9AE1OivVG/9cqsazAagshfQgWMeB+SXvMx8QOXSzytBuItP1+twHPT407VtUgd4kDa36wbU7UHtRlrkXPw10w1hB6BDfsMA+SX3OkfTeHvtvjjQP1Q2V6+jA8X9j3WL090G6TNgL/RVB6DuNqjdzRvvdY376+WqzqcSP97U3fyj3e1Q9ABqtUFX/oGvW9eYBubq1QIktv9FXWfuAN29mPWgy60ueAcg2IvVPW/mn07pVu+qj8vGSLrOr73uozFrteoA5Jc8VyfD9iWXf6x9vHmmOx9Xr7YHva/LUWb94yDXBvU20v44qBOQbfoye3flzqbNZ/fWV8ex3Z2A7JjBOxtip4ZcZp5LlWYEV4/t25fYR9kCqdGZGjbfmYHwD/rIYtOLu4Ne7OJd4Xz3EJBnoBOQvVn9mz+UfnxtRrwdN6uv65tVCGj/32X21Rt9pT2+FUeRpkqdIa9HLPWQzNbrlMcdecetYAzt3794MtsnaRSgXI3L9NBrLhoFyA4hBt47J6Fxl5joW9stQeriI1cgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiIKBxgOyEbPTozulqFKDCTguX3sRy4hoDaH9TByQ83eTzxDQG0G7t5vjL2Vxk9CCgkW2QCyhmG3RUNhJsNv7DcRAUAQGdCKhgLzbOitPI5McVpUyRFLkwAwHFMHImERDQCYUpe4IU5w4oz7LVw4utf9NxirlkAeXyJy7Ke7puNeYNSPnNwzfqNywd3fzcAck7sP3vFT2oQ254qFGdbC5ZQFWhu68y62ijZw8okjkCCktFQAQUloqAvkhAjR8Dh5sLSTVNQPqXn6HP4pMGVEVglDogjWj849SxTxSDdp9XjcLI36Ruqv3N6bM6KQOSc16aTMC8csKAdusYv2VOGNA5zX2hgHK1cldYR58yoFw1QLt10HAxYUD2OXxY5E/CgGzwT9ikcsKATPDPw5Ij6Ya8wrSWzAs1d3qqqQI6nzkCCks1UUBRgsRTBpTHiIlKGFDnXOBp5kJSTRVQ12TgSeZCUk0T0P4m4B6j9cAMhdghQIE6vR7HCuO+dc8njzaHihjmQYHWR8qf1YjWiyUJKKY5AgLmEgWkFlvPYzwwSxNQubgt5GLXEe7mkwQknwfJwLqe50EaXtnXkCcMSA4UJaCeJ4oKkIpOBGHASQKyHpR3zxpKQAZNfxBnkoBMG1T0DBcloIel2t8fBpwmID1U7HuiOHMPwtKD7asKhgHPFVClGKll8rvGAgkD4r3YMGuBKwakD6jKBz0W6hpOzgDQSS7UfmA29qAxdz81oBhTzykDihLdkSSgOKtOJAwoprm5AvJectU1WkoY0IDaizt+1IInDMhM+/TdzQ+YPEsY0P5Gk+lfWwpNniUMaPe9ftARI0YxSUDWg3qeKA42lyQg+USxcr9rDjOXJqCq8f7SIHOJAopnjoCAuUQBceq53xqnnvutDZh67rEyqQdmUQPQvHsxOPU82NykPehUQAOmngebSxLQgKnnwebSBISnngebSxRQDCUMyFtNO0AJA4oZaZ8koDjL1CcMaDbBC2ykCehJrR9PHqeFrhIHFKOjJ6BB5ggImCMgYI6ADqxM6oFZWPajyelBIPmQ0I4R5tIDFE0ENMgcAQFzBATMzRcQXCFm5oDwa0TnDWjASyDnDWjAa0TnDYgehIRfIzpzQPgHHXMHNNAcAQFzBPQl/yTzs3hQ+4HZpPU5ACUsAgKKfLOaniLfrKanyLcaxuik9XSABtysDjOaajc/3IPCDvrFAhpwszrMaLKAhq4+MF9AkYwSUNh+AiKgsP0ENHtAKYmAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICCguoNJbukFNMo6ZPgvK3MyuXokatGqvU1RAcp240pRyfyO+FCNKGZS5mb0qL7eh6xpbxQSkp4XMkub6BRzDVyMKytzKrv8JWxnbKiagI9UqBy+WEpS5lf3hm7AlWnxFBaTK1Zh0Hf5u0qDMrezls/+vxzZhXYoJSJ9x/7yPCHIIytzKXsjwk6C3WtZ6UkDlyDb65MxtQIsDbzxZT3mJjXKBoMyt7LopMu9pClQkQIUctrTa2WJUFYMyt7JrTnGa6ifr5sHS3XEzt7LrOJ3pXWKNwdrDcmQvEpS5NVCU0TlxltSKfKtR6OG+7EAKHQcyYigTlLmRXb+IcXrdfJIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiCgSQGS8fEqckqGv3hRLLvvf5JhmYWJaXHJzqEpAVJhdKWougzClK8Mlt9lwPxuLZebkVtlZJVLdhZNCZCNmbOvU9YxYuXiVm3QW0WaOKF1QzUlQLu1CZQ34an6r/hUMYc6vk79d05CUwKkf+OzceGpGpCgowGZNdo2Ntl5NClAUvnits+DvGTnKc/kACmHOWiDNu236EV7px7SlAApH5Efsr+S0ap1L6b6frlbeI5LdhZNCZBqZlTF2+Mg7S5yq2yfy7ERwiGaFKApioCACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgAgIiICACAiIgIAICIiAgP4EYBoxla8P0zsAAAAASUVORK5CYII=" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;               Sum      Mean        SD    Median       Mode         SE
+#&gt; EQ-5D-3L 2.381317 0.2381317 0.2431525 0.2041116 0.09882988 0.07689156
+#&gt;             Minimum   Maximum Count
+#&gt; EQ-5D-3L -0.1537361 0.6033667    10
+#&gt; 
+#&gt; $frequencyTable
+#&gt;                 scores            Freq Cumul relative
+#&gt; -0.15373611116  &quot;-0.15373611116&quot;  &quot;1&quot;  &quot;1&quot;   &quot;0.1&quot;   
+#&gt; -0.043558651253 &quot;-0.043558651253&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.1&quot;   
+#&gt; 0.09882988369   &quot;0.09882988369&quot;   &quot;1&quot;  &quot;3&quot;   &quot;0.1&quot;   
+#&gt; 0.139950980366  &quot;0.139950980366&quot;  &quot;1&quot;  &quot;4&quot;   &quot;0.1&quot;   
+#&gt; 0.172101927129  &quot;0.172101927129&quot;  &quot;1&quot;  &quot;5&quot;   &quot;0.1&quot;   
+#&gt; 0.236121359224  &quot;0.236121359224&quot;  &quot;1&quot;  &quot;6&quot;   &quot;0.1&quot;   
+#&gt; 0.380873610217  &quot;0.380873610217&quot;  &quot;1&quot;  &quot;7&quot;   &quot;0.1&quot;   
+#&gt; 0.450787771997  &quot;0.450787771997&quot;  &quot;1&quot;  &quot;8&quot;   &quot;0.1&quot;   
+#&gt; 0.496579789936  &quot;0.496579789936&quot;  &quot;1&quot;  &quot;9&quot;   &quot;0.1&quot;   
+#&gt; 0.603366713614  &quot;0.603366713614&quot;  &quot;1&quot;  &quot;10&quot;  &quot;0.1&quot;   
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] -0.2  0.0  0.2  0.4  0.6  0.8
+#&gt; 
+#&gt; $counts
+#&gt; [1] 2 3 2 2 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 1.0 1.5 1.0 1.0 0.5
+#&gt; 
+#&gt; $mids
+#&gt; [1] -0.1  0.1  0.3  0.5  0.7
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 1  39.69983   F      Control         4         5         1         2
+#&gt; 2  58.40727   F      Control         4         1         4         4
+#&gt; 3  55.34026   F Intervention         2         3         1         2
+#&gt; 4  43.65464   F      Control         3         2         1         5
+#&gt; 5  75.44182   F Intervention         2         4         1         2
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 7  79.45749   F Intervention         5         4         1         3
+#&gt; 8  94.33068   F Intervention         5         1         2         1
+#&gt; 9  65.10474   F Intervention         2         2         1         2
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 Mapped EQ-5D-3L scores
+#&gt; 1          4             0.09882988
+#&gt; 2          1             0.38087361
+#&gt; 3          2             0.60336671
+#&gt; 4          4            -0.04355865
+#&gt; 5          3             0.49657979
+#&gt; 6          2             0.45078777
+#&gt; 7          5            -0.15373611
+#&gt; 8          3             0.23612136
+#&gt; 9          5             0.17210193
+#&gt; 10         1             0.13995098
+ eq5dmap5Lto3L(EQ5D5Ldata,&quot;eq5d5L.q1&quot;,&quot;eq5d5L.q2&quot;,&quot;eq5d5L.q3&quot;,&quot;eq5d5L.q4&quot;,&quot;eq5d5L.q5&quot;,&quot;UK&quot;,&quot;CW&quot;,&quot;male&quot;,c(10,70))</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; $stats
+#&gt;                Sum      Mean        SD    Median      Mode        SE
+#&gt; EQ-5D-3L 0.5907388 0.2953694 0.2197948 0.2953694 0.4507878 0.1554184
+#&gt;           Minimum   Maximum Count
+#&gt; EQ-5D-3L 0.139951 0.4507878     2
+#&gt; 
+#&gt; $frequencyTable
+#&gt;                scores           Freq Cumul relative
+#&gt; 0.139950980366 &quot;0.139950980366&quot; &quot;1&quot;  &quot;1&quot;   &quot;0.5&quot;   
+#&gt; 0.450787771997 &quot;0.450787771997&quot; &quot;1&quot;  &quot;2&quot;   &quot;0.5&quot;   
+#&gt; 
+#&gt; $histogram
+#&gt; $breaks
+#&gt; [1] 0.0 0.2 0.4 0.6
+#&gt; 
+#&gt; $counts
+#&gt; [1] 1 0 1
+#&gt; 
+#&gt; $density
+#&gt; [1] 2.5 0.0 2.5
+#&gt; 
+#&gt; $mids
+#&gt; [1] 0.1 0.3 0.5
+#&gt; 
+#&gt; $xname
+#&gt; [1] &quot;scores&quot;
+#&gt; 
+#&gt; $equidist
+#&gt; [1] TRUE
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;histogram&quot;
+#&gt; 
+#&gt; $modifiedData
+#&gt;         age sex          arm eq5d5L.q1 eq5d5L.q2 eq5d5L.q3 eq5d5L.q4
+#&gt; 6  56.68776   M      Control         2         4         3         3
+#&gt; 10 67.33162   M Intervention         3         1         4         5
+#&gt;    eq5d5L.q5 Mapped EQ-5D-3L scores
+#&gt; 6          2              0.4507878
+#&gt; 10         1              0.1399510</code></pre>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

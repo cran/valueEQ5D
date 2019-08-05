@@ -1,0 +1,12 @@
+name: shiny
+title: shiny
+username:
+account: heapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1036565
+bundleId: 2240242
+url: https://heapps.shinyapps.io/shiny/
+when: 1563362920.61207
+asMultiple: FALSE
+asStatic: FALSE
