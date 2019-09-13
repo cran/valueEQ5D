@@ -21,7 +21,7 @@ valueEQ5D5LIndscores(country, this.response, this.response2 = NA,
 \item{this.response5}{response for EQ-5D-5L anxiety/depression, or NA if the responses are given as this.response}
 }
 \value{
-index values  if success, -1 if failure
+index values  if success, negative values if failure
 }
 \description{
 Function to value EQ-5D-5L scores for various countries

@@ -10,7 +10,7 @@ getModeForVec(v)
 \item{v}{a vector}
 }
 \value{
-mode
+mode if success -1 for failure
 }
 \description{
 Function to return mode

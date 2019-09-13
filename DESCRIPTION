@@ -1,7 +1,7 @@
 Package: valueEQ5D
 Type: Package
 Title: Scoring the EQ-5D Descriptive System
-Version: 0.4.3
+Version: 0.4.4
 Authors@R: c(person("Sheeja", "Manchira Krishnan", , "sheejamk@gmail.com", c("aut", "cre")))
 Maintainer: Sheeja Manchira Krishnan <sheejamk@gmail.com>
 Depends: R (>= 2.10)
@@ -24,7 +24,7 @@ Imports: rstudioapi, testthat, utils, dplyr, stringr
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-08-05 15:07:44 UTC; smk543
+Packaged: 2019-09-13 14:36:58 UTC; smk543
 Author: Sheeja Manchira Krishnan [aut, cre]
 Repository: CRAN
-Date/Publication: 2019-08-05 16:10:03 UTC
+Date/Publication: 2019-09-13 14:50:02 UTC

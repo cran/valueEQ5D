@@ -30,7 +30,7 @@ eq5dmap5Lto3L(eq5dresponse.data, mobility, self.care, usual.activities,
 \item{agelimit}{vector of ages to show upper and lower limits}
 }
 \value{
-index value  if success, -1 if failure
+index value  if success, negative values for failure
 }
 \description{
 Function to map EQ-5D-5L scores to EQ-5D-3L index values

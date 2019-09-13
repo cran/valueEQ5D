@@ -10,7 +10,7 @@ testFileExistRead(filename)
 \item{filename}{name of a file or directory}
 }
 \value{
-0 if success, -1 if failure
+0 if success, non zero negative values if failure
 }
 \description{
 Function to throw error on invalid directory or file or if the file is not readable
