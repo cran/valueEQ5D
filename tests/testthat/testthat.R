@@ -15,7 +15,7 @@ test_that("testing column existence", {
   y <- c(1,2,3,4)
   tempdata = as.data.frame(cbind(y,x))
   colnames(tempdata)<-c("name","num")
-  expect_equal(checkColumnExist("age",tempdata),-1)
+  expect_equal(suppressWarnings(checkColumnExist("age",tempdata)),-1)
   
 })
 print("----------------------------------------------")
@@ -26,44 +26,32 @@ test_that("test for file existence and access", {
   thisdir=getwd()
   expect_identical(testFileExistRead(thisdir),0)
   nodir="/Users/SheejaMK/Desktop/Model/filecheck/test"
-  expect_identical(testFileExistRead(nodir),-2)
+  expect_identical(suppressWarnings(testFileExistRead(nodir)),-2)
 })
-print("----------------------------------------------")
-
-# # #####################################################################################################################
-
+# # # #####################################################################################################################
 context("testing mode function")
 test_that("testing mode function", {
   x <- c(0,11,78,160)
   expect_equal(getModeForVec(x),0)
-  
 })
 context("testing mode function")
 test_that("testing mode function", {
   x <- c(0,"f",78,160)
-  expect_equal(getModeForVec(x),-1)
-  
+  expect_equal(suppressWarnings(getModeForVec(x)),-1)
 })
-
 context("testing mode function")
 test_that("testing mode function", {
   x <- c(78,NA,78,78)
-  expect_equal(getModeForVec(x),78)
-  
+  expect_equal(suppressWarnings(getModeForVec(x)),78)
 })
 context("testing mode function")
 test_that("testing mode function", {
   x <- c(78,"NA",78,78)
-  expect_equal(getModeForVec(x),-1)
-  
+  expect_equal(suppressWarnings(getModeForVec(x)),-1)
 })
-print("----------------------------------------------")
-
-# #####################################################################################################################
-
-
-context("testing subsetGenderAgeToGroup")
-test_that("testing subsetGenderAgeToGroup", {
+# # #####################################################################################################################
+context("testing getting column number for existing column names")
+test_that("testing getting column number for existing column names", {
   set.seed(20)
   sampledata <- data.frame(age=abs(rnorm(10, 60, 20)),
                            sex=factor(sample(c("M", "F"), 10, replace=T)),
@@ -76,14 +64,10 @@ test_that("testing subsetGenderAgeToGroup", {
   expect_equal(getColNumExistingColNames("sex",sampledata),2)
   expect_equal(getColNumExistingColNames("age",sampledata),1)
   expect_equal(getColNumExistingColNames(c("sex","gender","male","female","f","m"),sampledata),2)
-  expect_equal(getColNumExistingColNames(c("gender","male","female","f","m"),sampledata),-1)
-  expect_equal(getColNumExistingColNames("",sampledata),-1)
-  
+  expect_equal(suppressWarnings(getColNumExistingColNames(c("gender","male","female","f","m"),sampledata)),-1)
+  expect_equal(suppressWarnings(getColNumExistingColNames("",sampledata)),-1)
 })
-print("----------------------------------------------")
-
-# # #####################################################################################################################
-
+# # # #####################################################################################################################
 context("testing subsetGenderAgeToGroup")
 test_that("testing subsetGenderAgeToGroup", {
   set.seed(17)
@@ -104,16 +88,12 @@ test_that("testing subsetGenderAgeToGroup", {
   one<-subset(sampledata,sex=="F")
   two<-subset(one,one$age>=0 & one$age<= 10)
   expect_equal(subsetGenderAgeToGroup(sampledata,"female",c(0,10)),two)
-  expect_identical(subsetGenderAgeToGroup(sampledata,"bh",c(10,70)),-2)
-  expect_identical(subsetGenderAgeToGroup(sampledata,"bh",NULL),-2)
+  expect_identical(suppressWarnings(subsetGenderAgeToGroup(sampledata,"bh",c(10,70))),-2)
+  expect_identical(suppressWarnings(subsetGenderAgeToGroup(sampledata,"bh",NULL)),-2)
   one<-subset(sampledata,sex=="M")
   expect_identical(subsetGenderAgeToGroup(sampledata,"male",NULL),one)
 })
-print("----------------------------------------------")
-
-
-# # #####################################################################################################################
-
+# # # #####################################################################################################################
 context("testing descritpvie statistics")
 test_that("testing descritpvie statistics", {
   x <- c(0,11,78,160)
@@ -121,9 +101,7 @@ test_that("testing descritpvie statistics", {
   colnames(results)<-c("Sum","Mean","SD","Median", "Mode","SE","Minimum","Maximum","Count")
   rownames(results)<-"age"
   expect_equal(descriptiveStatDataColumn(x,"age",NA),results,tolerance=0.001)
-  
 })
-
 context("testing descriptive statistics")
 test_that("testing descriptive statistics", {
   x <- c(0,11,78,160)
@@ -131,10 +109,7 @@ test_that("testing descriptive statistics", {
   colnames(results)<-c("Sum","Mean","SD","Median", "Mode","SE","Minimum","Maximum","Count")
   rownames(results)<-"age"
   expect_equal(descriptiveStatDataColumn(x,"age",0),results,tolerance=0.001)
-  
 })
-
-
 context("testing descriptive statistics")
 test_that("testing descriptive statistics", {
   x <- c(0,NA,78,160)
@@ -142,23 +117,19 @@ test_that("testing descriptive statistics", {
   colnames(results)<-c("Sum","Mean","SD","Median", "Mode","SE","Minimum","Maximum","Count")
   rownames(results)<-"age"
   expect_equal(descriptiveStatDataColumn(x,"age",NA),results,tolerance=0.001)
-  
 })
 
 context("testing descriptive statistics")
 test_that("testing descriptive statistics", {
   x <- c(0,NA,"dd",160)
-  expect_equal(descriptiveStatDataColumn(x,"age",NA),-1)
-  
+  expect_equal(suppressWarnings(descriptiveStatDataColumn(x,"age",NA)),-1)
 })
 context("testing descriptive statistics")
 test_that("testing descriptive statistics", {
   x <- c('',11,78,160)
-  expect_equal(descriptiveStatDataColumn(x,"age",NA),-1)
-  
+  expect_equal(suppressWarnings(descriptiveStatDataColumn(x,"age",NA)),-1)
 })
-print("----------------------------------------------")
-## # #####################################################################################################################
+# ## # #####################################################################################################################
 context("testing numeric column")
 test_that("test for numeric values in a specific column but with no range given", {
   x <- c(0,11,78,120)
@@ -166,10 +137,9 @@ test_that("test for numeric values in a specific column but with no range given"
   x <- c(-8, 99,2,5,-99)
   expect_identical(testDataNumNorange(x,-99),0)
   x <- c("sheeja", 99,2,5,-99)
-  expect_identical(testDataNumNorange(x,-99),-1)
+  expect_identical(suppressWarnings(testDataNumNorange(x,-99)),-1)
 })
-print("----------------------------------------------")
-# # #####################################################################################################################
+# # # #####################################################################################################################
 context("Check 3L scores")
 test_that("Checking 3L scores ", {
   the.result<-checkScores3L(1,1,1,1,1)
@@ -178,20 +148,19 @@ test_that("Checking 3L scores ", {
   expect_identical(the.result,c(1,1,1,1,1))
   the.result<-checkScores3L(11111)
   expect_identical(the.result,c(1,1,1,1,1))
-  the.result<-checkScores3L(2,3,4,5,2)
+  the.result<-suppressWarnings(checkScores3L(2,3,4,5,2))
   expect_identical(the.result,-2)
-  the.result<-checkScores3L(23452)
+  the.result<-suppressWarnings(checkScores3L(23452))
   expect_identical(the.result,-2)
-  the.result<-checkScores3L(23,-1,5,2)
+  the.result<-suppressWarnings(checkScores3L(23,-1,5,2))
   expect_identical(the.result,-2)
-  the.result<-checkScores3L("",-1,5,2)
+  the.result<-suppressWarnings(checkScores3L("",-1,5,2))
   expect_identical(the.result,-2)
-  the.result<-checkScores3L("",-1,5,2,NA)
+  the.result<-suppressWarnings(checkScores3L("",-1,5,2,NA))
   expect_identical(the.result,-2)
   the.result<-checkScores3L(11221,NA,NA)
   expect_identical(the.result,c(1,1,2,2,1))
 })
-print("----------------------------------------------")
 
 # # #####################################################################################################################
 context("Check 3L scores")
@@ -206,20 +175,18 @@ test_that("Checking 3L scores ", {
   expect_identical(the.result,c(2,3,4,5,2))
   the.result<-checkScores5L(23452)
   expect_identical(the.result,c(2,3,4,5,2))
-  the.result<-checkScores5L(23458)
+  the.result<-suppressWarnings(checkScores5L(23458))
   expect_identical(the.result,-2)
-  the.result<-checkScores5L(23,-1,5,2)
+  the.result<-suppressWarnings(checkScores5L(23,-1,5,2))
   expect_identical(the.result,-4)
-  the.result<-checkScores5L("",-1,5,2)
+  the.result<-suppressWarnings(checkScores5L("",-1,5,2))
   expect_identical(the.result,-4)
-  the.result<-checkScores5L("",-1,5,2,NA)
+  the.result<-suppressWarnings(checkScores5L("",-1,5,2,NA))
   expect_identical(the.result,-4)
   the.result<-checkScores5L(11221,NA,NA)
   expect_identical(the.result,c(1,1,2,2,1))
 })
-print("----------------------------------------------")
-#####################################################################################################################
-
+# #####################################################################################################################
 context("EQ5D5L scoring ")
 test_that("EQ5D5L scoring ", {
   the.result<-valueEQ5D5LIndscores("England",1,1,1,1,2)
@@ -236,26 +203,26 @@ test_that("EQ5D5L scoring ", {
   expect_equal(the.result,0.942,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("England",55555)
   expect_equal(the.result,-0.285,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",111)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",111))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",345678)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",345678))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("NM",-11111)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("NM",-11111))
   expect_equal(the.result,-3,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D5LIndscores("England",11112, NA, NA, NA, NA)
   expect_equal(the.result,0.922,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("England",c(1,1,1,1,2), NA, NA, NA, NA)
   expect_equal(the.result,0.922,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(1,1,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(1,1,1), NA, NA, NA, NA))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(8,1,1,2,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(8,1,1,2,1), NA, NA, NA, NA))
   expect_equal(the.result,-2,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("England",c(1,1,1,1,2), NA, NA, NA)
   expect_equal(the.result,0.922,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("England",11111)
   expect_equal(the.result,1,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D5LIndscores("England",c(1,1,1,1,2))
   expect_equal(the.result,0.922,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("England",c(1,1,1,2,1))
@@ -266,33 +233,31 @@ test_that("EQ5D5L scoring ", {
   expect_equal(the.result,0.950,tolerance=1e-3)
   the.result<-valueEQ5D5LIndscores("Ireland",c(2,1,1,1,1))
   expect_equal(the.result,0.937,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(5,5,5,5,5))
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(5,5,5,5,5)))
   expect_equal(the.result,-0.285,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(1,1,1))
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(1,1,1)))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(3,4,5,6,7,8))
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(3,4,5,6,7,8)))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",c(-1,1,1,1,1))
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",c(-1,1,1,1,1)))
   expect_equal(the.result,-2,tolerance=1e-3)
-  
-  the.result<-valueEQ5D5LIndscores("England",NA,1,1,1,2)
+
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",NA,1,1,1,2))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",NA,1,1,2,1)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",NA,1,1,2,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",NA,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",NA,1,1,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",1,1,1,1,NA)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",1,1,1,1,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("England",-1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("England",-1,1,1,1,1))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("Germany",1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("Germany",1,1,1,1,1))
   expect_equal(the.result,1,tolerance=1e-3)
-  the.result<-valueEQ5D5LIndscores("US",1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D5LIndscores("US",1,1,1,1,1))
   expect_equal(the.result,-3,tolerance=1e-3)
 })
-print("----------------------------------------------")
-################################################################################################################
-# #################################################################################################################
+# # #################################################################################################################
 context("testing EQ5D3L valuation using individual responses")
 test_that("test for value3L", {
   the.result<-valueEQ5D3LIndscores("UK","TTO",1,1,1,1,2)
@@ -309,25 +274,25 @@ test_that("test for value3L", {
   expect_equal(the.result,0.85,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","TTO",33333)
   expect_equal(the.result,-0.594,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",55555)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",55555))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",111)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",111))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",345678)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",345678))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("NM","TTO",-11111)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("NM","TTO",-11111))
   expect_equal(the.result,-2,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D3LIndscores("UK","TTO",11112, NA, NA, NA, NA)
   expect_equal(the.result,0.848,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D3LIndscores("UK","TTO",c(1,1,1,1,2), NA, NA, NA, NA)
   expect_equal(the.result,0.848,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(1,1,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(1,1,1), NA, NA, NA, NA))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(8,1,1,2,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(8,1,1,2,1), NA, NA, NA, NA))
   expect_equal(the.result,-3,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D3LIndscores("UK","TTO",c(1,1,1,1,2), NA, NA, NA)
   expect_equal(the.result,0.848,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","TTO",11111)
@@ -343,37 +308,36 @@ test_that("test for value3L", {
   expect_equal(the.result,0.815,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","TTO",c(2,1,1,1,1))
   expect_equal(the.result,0.85,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(5,5,5,5,5))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(5,5,5,5,5)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(1,1,1))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(1,1,1)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(3,4,5,6,7,8))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(3,4,5,6,7,8)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",c(-1,1,1,1,1))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",c(-1,1,1,1,1)))
   expect_equal(the.result,-3,tolerance=1e-3)
   #
-  the.result<-valueEQ5D3LIndscores("UK","TTO",NA,1,1,1,2)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",NA,1,1,1,2))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",NA,1,1,2,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",NA,1,1,2,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",NA,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",NA,1,1,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  
-  the.result<-valueEQ5D3LIndscores("UK","TTO",1,1,1,1,NA)
+
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",1,1,1,1,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",-1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",-1,1,1,1,1))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("DE","TTO",1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("DE","TTO",1,1,1,1,1))
   expect_equal(the.result,-2,tolerance=1e-3)
   
-  
-  the.result<-valueEQ5D3LIndscores("UK","TTO",4,5,6,5,8)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",4,5,6,5,8))
   expect_equal(the.result,-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",-1,2,3,2,2)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",-1,2,3,2,2))
   expect_equal(the.result,-3)
-  the.result<-valueEQ5D3LIndscores("UK","TTO",123)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","TTO",123))
   expect_equal(the.result,NA)
-  the.result<-valueEQ5D3LIndscores("JP","TTO",c(1,2,3,2,3))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("JP","TTO",c(1,2,3,2,3)))
   expect_equal(the.result,-2)
   answers =EQ5D3L_indexvalues.df
   for (i in 1:nrow(answers)){
@@ -382,14 +346,9 @@ test_that("test for value3L", {
     expect_equal(the.result,answers$UKTTO[i])
   }
 })
-print("----------------------------------------------")
-
-# #################################################################################################################
-
-
+# # #################################################################################################################
 context("testing EQ5D3L valuation using individual responses")
 test_that("test for value3L", {
-  
   the.result<-valueEQ5D3LIndscores("UK","VAS",1,1,1,1,2)
   expect_equal(the.result,0.782,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","VAS",11112)
@@ -404,22 +363,22 @@ test_that("test for value3L", {
   expect_equal(the.result,0.774,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","VAS",33333)
   expect_equal(the.result,-0.073,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",55555)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",55555))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",111)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",111))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",345678)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",345678))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("NM","VAS",-11111)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("NM","VAS",-11111))
   expect_equal(the.result,-2,tolerance=1e-3)
-  
+
   the.result<-valueEQ5D3LIndscores("UK","VAS",11112, NA, NA, NA, NA)
   expect_equal(the.result,0.782,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","VAS",c(1,1,1,1,2), NA, NA, NA, NA)
   expect_equal(the.result,0.782,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(1,1,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(1,1,1), NA, NA, NA, NA))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(8,1,1,2,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(8,1,1,2,1), NA, NA, NA, NA))
   expect_equal(the.result,-3,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","VAS",c(1,1,1,1,2), NA, NA, NA)
   expect_equal(the.result,0.782,tolerance=1e-3)
@@ -435,33 +394,33 @@ test_that("test for value3L", {
   expect_equal(the.result,0.752,tolerance=1e-3)
   the.result<-valueEQ5D3LIndscores("UK","VAS",c(2,1,1,1,1))
   expect_equal(the.result,0.774,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(5,5,5,5,5))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(5,5,5,5,5)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(1,1,1))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(1,1,1)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(3,4,5,6,7,8))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(3,4,5,6,7,8)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",c(-1,1,1,1,1))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",c(-1,1,1,1,1)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",NA,1,1,1,2)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",NA,1,1,1,2))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",NA,1,1,2,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",NA,1,1,2,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",NA,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",NA,1,1,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",1,1,1,1,NA)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",1,1,1,1,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",-1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",-1,1,1,1,1))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("DE","VAS",1,1,1,1,1)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("DE","VAS",1,1,1,1,1))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",4,5,6,5,8)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",4,5,6,5,8))
   expect_equal(the.result,-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",-1,2,3,2,2)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",-1,2,3,2,2))
   expect_equal(the.result,-3)
-  the.result<-valueEQ5D3LIndscores("UK","VAS",123)
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("UK","VAS",123))
   expect_equal(the.result,NA)
-  the.result<-valueEQ5D3LIndscores("JP","VAS",c(1,2,3,2,3))
+  the.result<-suppressWarnings(valueEQ5D3LIndscores("JP","VAS",c(1,2,3,2,3)))
   expect_equal(the.result,-2)
   answers =EQ5D3L_indexvalues.df
   for (i in 1:nrow(answers)){
@@ -470,40 +429,34 @@ test_that("test for value3L", {
     expect_equal(the.result,answers$UKVAS[i])
   }
 })
-print("----------------------------------------------")
-###############################################################################################################
-
-
-
+# ###############################################################################################################
 context("Crosswalk EQ5D5L to 3L values using Van Hout method")
 test_that("Crosswalk EQ5D5L to 3L values", {
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",56789)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",56789))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-12345)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-12345))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-1111)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-1111))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","van hout",-23456)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","van hout",-23456))
   expect_equal(the.result,-4,tolerance=1e-3)
-  
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW","",12345)
+
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW","",12345))
   expect_equal(the.result,-4,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,2,3,4,5))
   expect_equal(the.result,0.06333624,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",1,2,3,4,5)
   expect_equal(the.result,0.06333624,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",8,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",8,2,3,4,5))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",77777,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",77777,2,3,4,5))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",NA,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",NA,2,3,4,5))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",1,2,3,4,NA)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",1,2,3,4,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
 })
-# # #####################################################################################################################
-#
-
+# # # #####################################################################################################################
 context("Crosswalk EQ5D5L to 3L values for any country ")
 test_that("Crosswalk EQ5D5L to 3L values for any country ", {
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",1,1,1,1,2)
@@ -520,30 +473,30 @@ test_that("Crosswalk EQ5D5L to 3L values for any country ", {
   expect_equal(the.result,0.8766021,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",55555)
   expect_equal(the.result,-0.594,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",111)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",111))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",345678)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",345678))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("NM","",-11111)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("NM","",-11111))
   expect_equal(the.result,-2,tolerance=1e-3)
-  
+
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",11112, NA, NA, NA, NA)
   expect_equal(the.result,0.8794038,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1,1,2), NA, NA, NA, NA)
   expect_equal(the.result,0.8794038,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1), NA, NA, NA, NA))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(8,1,1,2,1), NA, NA, NA, NA)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",c(8,1,1,2,1), NA, NA, NA, NA))
   expect_equal(the.result,-6,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1,1,2), NA, NA, NA)
   expect_equal(the.result,0.8794038,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",11111)
   expect_equal(the.result,1,tolerance=1e-3)
-  
+
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1,1,2))
   expect_equal(the.result,0.8794038,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1,2,1))
-  
+
   expect_equal(the.result,0.8365693,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,2,1,1))
   expect_equal(the.result,0.9061444,tolerance=1e-3)
@@ -553,66 +506,55 @@ test_that("Crosswalk EQ5D5L to 3L values for any country ", {
   expect_equal(the.result,0.8766021,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(5,5,5,5,5))
   expect_equal(the.result,-0.594,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1))
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",c(1,1,1)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(3,4,5,6,7,8))
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",c(3,4,5,6,7,8)))
   expect_equal(the.result,-3,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(-1,1,1,1,1))
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",c(-1,1,1,1,1)))
   expect_equal(the.result,-6,tolerance=1e-3)
-  
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,1,2)
+
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,1,2))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,2,1)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,2,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,1)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",NA,1,1,1))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",1,1,1,1,NA)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",1,1,1,1,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-1,1,1,1,1)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-1,1,1,1,1))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("DE","",1,1,1,1,1)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("DE","",1,1,1,1,1))
   expect_equal(the.result,-2,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("US","",1,1,1,1,1)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("US","",1,1,1,1,1))
   expect_equal(the.result,-2,tolerance=1e-3)
 })
-print("----------------------------------------------")
-
-# # ########################################
-
-# #############################################################################
+# # #############################################################################
 context("Crosswalk EQ5D5L to 3L values for any country")
 test_that("Crosswalk EQ5D5L to 3L values", {
-  
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",56789)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",56789))
   expect_equal(the.result,-4,tolerance=1e-3)
-  
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-12345)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-12345))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-1111)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-1111))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",-23456)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",-23456))
   expect_equal(the.result,-4,tolerance=1e-3)
-  
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",12345)
   expect_equal(the.result,0.06333624,tolerance=1e-3)
-  
   the.result<-eq5dmap5Lto3LIndscores("UK","CW",c(1,2,3,4,5))
   expect_equal(the.result,0.06333624,tolerance=1e-3)
   the.result<-eq5dmap5Lto3LIndscores("Japan","CW",1,2,3,4,5)
   expect_equal(the.result,0.522,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",8,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",8,2,3,4,5))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK","CW",77777,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK","CW",77777,2,3,4,5))
   expect_equal(the.result,-4,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK",NA,2,3,4,5)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK",NA,2,3,4,5))
   expect_equal(the.result,NA,tolerance=1e-3)
-  the.result<-eq5dmap5Lto3LIndscores("UK",1,2,3,4,NA)
+  the.result<-suppressWarnings(eq5dmap5Lto3LIndscores("UK",1,2,3,4,NA))
   expect_equal(the.result,NA,tolerance=1e-3)
 })
-print("----------------------------------------------")
-################################################################################################################
-
-
+# ################################################################################################################
 context("EQ5D5L scoring")
 test_that("EQ5D5L scoring", {
   answers =EQ5D5L_indexvalues.df
@@ -632,9 +574,7 @@ test_that("EQ5D5L scoring", {
     }
   }
 })
-print("----------------------------------------------")
-
-# ###############################################################################################################
+# # ###############################################################################################################
 context("EQ5D3L scoring")
 test_that("EQ5D3L scoring", {
   answers =EQ5D3L_indexvalues.df
@@ -681,9 +621,7 @@ test_that("EQ5D3L scoring", {
     }
   }
 })
-print("----------------------------------------------")
-
-# ###############################################################################################################
+# # ###############################################################################################################
 context("EQ5D5L crosswalk mapping")
 test_that("EQ5D5L crosswalk mapping", {
   answers =EQ5D5L_crosswalk_indexvalues.df
@@ -702,5 +640,4 @@ test_that("EQ5D5L crosswalk mapping", {
     }
   }
 })
-print("----------------------------------------------")
-# ###############################################################################################################
+# # ###############################################################################################################
