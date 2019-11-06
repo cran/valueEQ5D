@@ -4,19 +4,19 @@
 \alias{checkScores3L}
 \title{Function to check the EQ-5D-3L scores}
 \usage{
-checkScores3L(this.response, this.response2 = NA, this.response3 = NA,
-  this.response4 = NA, this.response5 = NA)
+checkScores3L(dimen, dimen2 = NA, dimen3 = NA, dimen4 = NA,
+  dimen5 = NA)
 }
 \arguments{
-\item{this.response}{a must input,response for EQ-5D-3L mobility  or the 5 digit response, or the vector of responses, e.g. 11111, c(1,1,1,1,1) or 1}
+\item{dimen}{a must input,response for EQ-5D-3L mobility  or the 5 digit response, or the vector of responses, e.g. 11111, c(1,1,1,1,1) or 1}
 
-\item{this.response2}{response for EQ-5D-3L self care, or NA if the responses are given as this.response}
+\item{dimen2}{response for EQ-5D-3L self care, or NA if the responses are given as dimen}
 
-\item{this.response3}{response for EQ-5D-3L usual activities,or NA if the responses are given as this.response}
+\item{dimen3}{response for EQ-5D-3L usual activities,or NA if the responses are given as dimen}
 
-\item{this.response4}{response for EQ-5D-3L pain/discomfort, or NA if the responses are given as this.response}
+\item{dimen4}{response for EQ-5D-3L pain/discomfort, or NA if the responses are given as dimen}
 
-\item{this.response5}{response for EQ-5D-3L anxiety/depression, or NA if the responses are given as this.response}
+\item{dimen5}{response for EQ-5D-3L anxiety/depression, or NA if the responses are given as dimen}
 }
 \description{
 Function to check the EQ-5D-3L scores

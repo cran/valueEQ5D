@@ -2,20 +2,20 @@
 #' Function to throw error on invalid directory or file or if the file is not readable
 #' @param filename  name of a file or directory
 #' @return 0 if success, non zero negative values if failure
-#' @examples testFileExistRead("smk543/Desktop/MKrishnan/Project I-WOTCH/Datasets/testing.csv")
+#' @examples testFileExistRead(system.file("extdata", "blank.txt", package = "valueEQ5D"))
 #' @export
 testFileExistRead<-function(filename){
   ## Checking if the file exists
   if (file.exists(filename)){
     ## Checking if the file is accessable to read
     if (file.access(filename, 0)!=0){
-      warning(" Error reading file ")
-      return(-1)
+      stop(" Error reading file ")
+      ###return(-1)
     }
     return(0)
   }else{
-    warning(" Invalid directory or file ")
-    return(-2)
+    stop(" Invalid directory or file ")
+    #return(-2)
   }
 }
 ###########################################################################################################
@@ -31,7 +31,6 @@ checkColumnExist<-function(column.name,data){
   if(any(one==two)){
     return(0)
   }else{
-    #warning("Data does not contain the column with the specfied column name")
     return(-1)
   }
 }
@@ -48,8 +47,8 @@ getColumnNoColNames=function(data,column.name){
     column.no=which(data.column.names==toupper(column.name))
     return(column.no)
   }else{
-    warning("Column name does not exist")
-    return(-1)
+    stop("Column name does not exist")
+    ###return(-1)
     
   }
 }
@@ -66,9 +65,8 @@ getFrequencyTable <- function(v) {
     res<-cbind(scores,res)
     return(res)
   }else{
-    
-    warning("Null vector")
-    return(-1)
+    stop("Null vector")
+    ###return(-1)
   }
 }
 ###########################################################################################################
@@ -82,8 +80,8 @@ getModeForVec <- function(v) {
     uniqv <- unique(v)
     uniqv[which.max(tabulate(match(v, uniqv)))]
   }else{
-    warning("Non numeric data")
-    return(-1)
+    stop("Non numeric data")
+    ###return(-1)
   }
 }
 ###########################################################################################################
@@ -103,9 +101,8 @@ testDataNumNorange=function(vec,nrcode=NA){
     if(is.numeric(no.nrcode.entries)){
       return(0)
     }else{
-      
-      warning("Some values-other than NR code is not numeric")
-      return(-1)
+      stop("Some values-other than NR code is not numeric")
+      ##return(-1)
     }
 }
 ###########################################################################################################
@@ -120,8 +117,8 @@ testDataNumNorange=function(vec,nrcode=NA){
 descriptiveStatDataColumn=function(colum,column.name,nrcode=NA){
     vec<-colum
     if (testDataNumNorange(vec,nrcode)!=0){
-      warning("Non numeric columns, cant estimate the descriptive statistics")
-      return(-1)
+      stop("Non numeric columns, cant estimate the descriptive statistics")
+      ##return(-1)
     }else{
       this.column=colum
       if (is.na(nrcode)){
@@ -153,9 +150,8 @@ convertNumberToIndividualDigits<-function(this.number){
   stringNumber<-toString(this.number)
   result=suppressWarnings(as.numeric(strsplit(stringNumber, "")[[1]]))
   if(any(is.na(result))){
-    
-    warning("The responses are not valid")
-    return(-1)
+    stop("The responses are not valid")
+    ###return(-1)
   }else{
     return(result)
   }
@@ -175,8 +171,8 @@ getColNumExistingColNames<-function(column.names,data){
     colnum=getColumnNoColNames(data,column.names[this.col])
     return(colnum)
   }else{
-    warning(paste("No column exists with specified column names - ",column.names,sep=" "))
-    return(-1)
+    stop("No column exists with specified column names")
+    ##return(-1)
   }
 }
 ###########################################################################################################
@@ -207,8 +203,8 @@ subsetGenderAgeToGroup<-function(data,gender,agelimit){
       }
     }else{
         
-        warning("Group by should be euther male or female")
-        return(-2)
+        stop("Group by should be euther male or female")
+        #return(-2)
     }
   }
   if(is.null(agelimit) || sum(toupper(agelimit)=="NA")!=0 || sum(is.na(agelimit))!=0){#no agelimit option given
@@ -221,8 +217,8 @@ subsetGenderAgeToGroup<-function(data,gender,agelimit){
      if(colnum!=-1){
        working.data=working.data[working.data[colnum]>=lowerlimit & working.data[colnum]<=upperlimit,]
      }else{
-       warning("Error in returning column number for the correspoing age coulmn")
-       return(-1)
+       stop("Error in returning column number for the correspoing age coulmn")
+       ##return(-1)
      }
   }
   return(working.data)
@@ -236,9 +232,8 @@ subsetGenderAgeToGroup<-function(data,gender,agelimit){
 replaceSpaceUnderscore<-function(this.string){
   sep.string<-unlist(strsplit(this.string, " "))
   if(length(sep.string)<1){
-    
-    warning("Error in separating the string")
-    return(-1)
+    stop("Error in separating the string")
+    ##return(-1)
   }else{
     new.string=sep.string[1]
     if(length(sep.string)>1){

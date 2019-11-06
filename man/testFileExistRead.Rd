@@ -16,5 +16,5 @@ testFileExistRead(filename)
 Function to throw error on invalid directory or file or if the file is not readable
 }
 \examples{
-testFileExistRead("smk543/Desktop/MKrishnan/Project I-WOTCH/Datasets/testing.csv")
+testFileExistRead(system.file("extdata", "blank.txt", package = "valueEQ5D"))
 }

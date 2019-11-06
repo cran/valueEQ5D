@@ -51,7 +51,7 @@ This package can be used for valuing the adult EQ-5D descriptive system scores -
     Uruguay: Augustovski et al (2016) <doi:10.1007/s11136-015-1086-4>
 
     
-EQ-5D-3L scores can be valued for the countries Arrgentina, Australia,Belgium, Brazil, Canada, Chile, Denmark, Europe, Finland, France, Germany, Italy,Japan,Malaysia, Netherlands, New Zealand,Poland,Portugal,Singapre,Slovenia,Spain,Sri Lanka, South Korea, Sweden, Taiwan,Thailand,Trinidad and Tobago, UK,USA,and Zimbabwe.
+EQ-5D-3L scores can be valued for the countries Argentina, Australia,Belgium, Brazil, Canada, Chile, Denmark, Europe, Finland, France, Germany, Italy,Japan,Malaysia, Netherlands, New Zealand,Poland,Portugal,Singapore,Slovenia,Spain,Sri Lanka, South Korea, Sweden, Taiwan,Thailand,Trinidad and Tobago, UK,USA,and Zimbabwe.
 
     Argentina: Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x> 
     Australia: Viney et al (2011) <doi:10.1016/j.jval.2011.04.009>
@@ -93,9 +93,9 @@ The 5L descriptive scores can be mapped to 3L index values for 10 countries usin
 
 If the individual responses are in column formats (e.g. in csv) they can be used as arguments in the methods.
 
-In brief, for valuing EQ-5D-3L responses from individual responses to the descriptive system, use "valueEQ5D3LIindscores";for valuing EQ-5D-5L responses from descriptive system, use "valueEQ5D5LIindscores"; and for mapping EQ-5D-5L responses from descriptive system to EQ-5D-3L index values, use "eq5dmap5Lto3LIndscores". The arguments for all these three parameters will be country names and followed by the five individual responses.
+In brief, for valuing EQ-5D-3L responses from individual responses to the descriptive system, use "value3LIindscores";for valuing EQ-5D-5L responses from descriptive system, use "value5LIindscores"; and for mapping EQ-5D-5L responses from descriptive system to EQ-5D-3L index values, use "map5Lto3LInd". The arguments for all these three parameters will be country names and followed by the five individual responses.
 
-If the requirement is to get the summary statistics of collected EQ-5D responses from many individuals with conditions on gender and age use these methods: valuing EQ-5D-3L responses use "valueEQ5D3L";for valuing EQ-5D-5L responses, use "valueEQ5D5L"; and for mapping EQ-5D-5L responses to EQ-5D-3L index values, use "eq5dmap5Lto3L". The arguments for all these three parameters will be country names and followed by the five column names of the EQ-5D responses and the data containing these EQ-5D responses.
+If the requirement is to get the summary statistics of collected EQ-5D responses from many individuals with conditions on gender and age use these methods: valuing EQ-5D-3L responses use "value3L";for valuing EQ-5D-5L responses, use "value5L"; and for mapping EQ-5D-5L responses to EQ-5D-3L index values, use "map5Lto3L". The arguments for all these three parameters will be country names and followed by the five column names of the EQ-5D responses and the data containing these EQ-5D responses.
 
 EQ-5D-5L responses for England are converted to index values using Devlin et al. method. EQ-5D-3L responses for England are converted to index values using Dolan et al. method.  EQ-5D-5L responses for England are mapped to EQ-5D-3L index values using Van Hout et al. method.
 
@@ -131,19 +131,19 @@ For demonstration purposes, a simulated data set representing treatment and cont
 Each of the below calls will give same answer while valuing the EQ-5D-3L individual score 1,2,3,2,2 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.
 ```{r }
 ## Valuing EQ-5D-3L individual score
- valueEQ5D3LIndscores("UK","TTO",1,2,3,2,2)
- valueEQ5D3LIndscores("UK","VAS",c(1,2,3,2,2))
- valueEQ5D3LIndscores("UK","TTO",12322)
+ value3LInd("UK","TTO",1,2,3,2,2)
+ value3LInd("UK","VAS",c(1,2,3,2,2))
+ value3LInd("UK","TTO",12322)
 ```
 
-When the data is in column format as in example below, use the 'valueEQ5D3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
+When the data is in column format as in example below, use the 'value3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
 ```{r }
 
-result1<-valueEQ5D3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO",NULL,NULL)
+result1<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO",NULL,NULL)
 
 ```
 
-The results can be called using the stats,frequencyTable ,histogram and modifiedData which are given below.
+The results can be called using the stats,frequencyTable, histogram and modifiedData which are given below.
 
 ```{r }
 result1$stats
@@ -156,9 +156,9 @@ Similarly, we can use the options to get the results for particular gender with 
 
 
 ```{r }
-result2<-valueEQ5D3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",c(10,70))
-result3<-valueEQ5D3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",NULL)
-result4<-valueEQ5D3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO",NULL,c(10,70))
+result2<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",c(10,70))
+result3<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",NULL)
+result4<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO",NULL,c(10,70))
 ```
 
 
@@ -168,21 +168,21 @@ Similarly,each of the below calls values EQ-5D-5L individual score 1,2,3,4,5 for
 ```{r }
 ## Valuing EQ-5D-5L individual score
 
-valueEQ5D5LIndscores("England",1,2,3,4,5)
-valueEQ5D5LIndscores("England",c(1,2,3,4,5))
-valueEQ5D5LIndscores("England",12345)
-valueEQ5D5LIndscores("Germany",12345)
-valueEQ5D5LIndscores("Spain",12345)
-valueEQ5D5LIndscores("Indonesia",12345)
+value5LInd("England",1,2,3,4,5)
+value5LInd("England",c(1,2,3,4,5))
+value5LInd("England",12345)
+value5LInd("Germany",12345)
+value5LInd("Spain",12345)
+value5LInd("Indonesia",12345)
 ```
 
-When the data is in column format as in example below, use the 'valueEQ5D5L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
+When the data is in column format as in example below, use the 'value5L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
 ````{r }
 
-valueEQ5D5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England",NULL,NULL)
-valueEQ5D5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England","male",c(10,70))
-valueEQ5D5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Indonesia","male",NULL)
-valueEQ5D5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Ireland",NULL,c(10,70))
+value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England",NULL,NULL)
+value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England","male",c(10,70))
+value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Indonesia","male",NULL)
+value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Ireland",NULL,c(10,70))
 ```
 
 
@@ -191,14 +191,14 @@ Each of the below calls will give same EQ-5d-3L index values while valuing the E
 ```{r }
 ## Valuing EQ-5D-5L individual score
 
-eq5dmap5Lto3LIndscores("UK","CW",1,2,3,4,5)
-eq5dmap5Lto3LIndscores("UK","CW",c(1,2,3,4,5))
-eq5dmap5Lto3LIndscores("Denmark","CW",12345)
+map5Lto3LInd("UK","CW",1,2,3,4,5)
+map5Lto3LInd("UK","CW",c(1,2,3,4,5))
+map5Lto3LInd("Denmark","CW",12345)
 ```
-When the data is in column format as in example below, use the 'eq5dmap5Lto3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below.
+When the data is in column format as in example below, use the 'map5Lto3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below.
 ```{r }
 
- eq5dmap5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW",NULL,NULL)
- eq5dmap5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW","male",c(10,70))
+ map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW",NULL,NULL)
+ map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW","male",c(10,70))
 
 ```

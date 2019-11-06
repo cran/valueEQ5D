@@ -58,7 +58,7 @@
 
 \strong{Argentina}: VAS - Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 
-\strong{Belgium}: VAS - Selected exmple page 209 in Cleemput et al (2010) <doi:10.1007/s10198-009-0167-0>
+\strong{Belgium}: VAS - Selected example page 209 in Cleemput et al (2010) <doi:10.1007/s10198-009-0167-0>
 
 \strong{Denmark}: VAS -  Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
 
