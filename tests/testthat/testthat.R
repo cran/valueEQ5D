@@ -21,7 +21,7 @@ test_that("testing column existence", {
 context("testing file existence")
 test_that("test for file existence and access", {
   thisfile=system.file("extdata", "blank.txt", package = "valueEQ5D")
-  expect_identical(testFileExistRead(thisdir),0)
+  expect_identical(testFileExistRead(thisfile),0)
 })
 # # # #####################################################################################################################
 context("testing mode function")
@@ -211,7 +211,7 @@ test_that("EQ5D5L scoring ", {
   expect_equal(the.result,0.922,tolerance=1e-3)
   the.result<-value5LInd("England",11111)
   expect_equal(the.result,1,tolerance=1e-3)
-
+  
   the.result<-value5LInd("England",NA,1,1,1,2)
   expect_equal(the.result,NA,tolerance=1e-3)
   the.result<-value5LInd("England",NA,1,1,2,1)
@@ -222,7 +222,7 @@ test_that("EQ5D5L scoring ", {
   expect_equal(the.result,NA,tolerance=1e-3)
   the.result<-value5LInd("Germany",1,1,1,1,1)
   expect_equal(the.result,1,tolerance=1e-3)
-
+  
   expect_error(value5LInd("England",c(1,1,1), NA, NA, NA, NA),"Invalid EQ-5D-5L responses-check the responses to each question",fixed=TRUE)
   expect_error(value5LInd("England",c(8,1,1,2,1), NA, NA, NA, NA),"Responses not valid for EQ-5D-5L scores",fixed=TRUE)
   expect_error(value5LInd("England",c(1,1,1)),"Invalid EQ-5D-5L responses-check the responses to each question",fixed=TRUE)
@@ -300,7 +300,7 @@ test_that("test for value3L", {
   expect_error(value3LInd("UK","TTO",4,5,6,5,8),"Responses not valid for EQ-5D-3L scores",fixed=TRUE)
   expect_error(value3LInd("UK","TTO",-1,2,3,2,2),"The responses are not valid",fixed=TRUE)
   expect_error(value3LInd("JP","TTO",c(1,2,3,2,3)),"No country tariffs found for the country you specified for EQ-5D-3L. Please try later",fixed=TRUE)
-
+  
 })
 # # # #################################################################################################################
 context("testing EQ5D3L valuation using individual responses")
@@ -369,7 +369,7 @@ test_that("test for value3L", {
   expect_error(value3LInd("UK","VAS",4,5,6,5,8),"Responses not valid for EQ-5D-3L scores",fixed=TRUE)
   expect_error(value3LInd("UK","VAS",-1,2,3,2,2),"The responses are not valid",fixed=TRUE)
   expect_error(value3LInd("JP","VAS",c(1,2,3,2,3)),"No country tariffs found for the country you specified for EQ-5D-3L. Please try later",fixed=TRUE)
-
+  
 })
 # ###############################################################################################################
 

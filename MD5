@@ -1,10 +1,11 @@
-6af0ed5d5504d12045bdafcc56da2362 *DESCRIPTION
+8e9acb4d6aab4dffb2f51daebd721ab8 *DESCRIPTION
 d2f6df0635c591cd43f7cc9628fe2bc0 *NAMESPACE
-d6ecd996f92ef776adc191e98739992e *R/basic_checks.R
+362a76d1039e630af20f74ec0fcb82a4 *R/basic_checks.R
 d666ce28ef845bd1b6b80c6b9edc6e76 *R/data.R
-213219f3624c9b178ee340312dd28228 *R/eq5d.R
+e49ca1d5af98f0845866012649c5263b *R/eq5d.R
 ed71ce083870073e4f046c17a6dc47f6 *R/globals.R
-756d0c6999a35386dfb8bc4659e0ecfd *README.md
+388cc02f5b1dc038ac056ce4e6348af3 *R/sysdata.rda
+6bb6c564a28ce3a33bbbd7f7cd2ea9b4 *README.md
 3b2b116698dfd098fce93cb246bd6339 *build/vignette.rds
 1ee6668eddd4301f25b84365db5b87f3 *data/EQ5D3L_indexvalues.df.rda
 f186daee3c0736ecbbfe6284ff12b881 *data/EQ5D3L_tariffs_TTO.df.rda
@@ -15,7 +16,7 @@ f6c4d26adb8698ced9d543f06346b84a *data/EQ5D5L_indexvalues.df.rda
 1583c650591478a242b8045520b613b7 *data/Probability_matrix_crosswalk.df.rda
 69e42b530baddb895db5b52b89ed13f9 *inst/doc/User_Guide.R
 246578911db3ac109306edf3d16fd565 *inst/doc/User_Guide.Rmd
-cdc20cba1c6712f3826cc62a0c943dbd *inst/doc/User_Guide.html
+0d9abcf5571f7b9a8935e16394f6b15f *inst/doc/User_Guide.html
 d41d8cd98f00b204e9800998ecf8427e *inst/extdata/blank.txt
 2ba889c1630d31eb97e00d63a73774f8 *inst/shiny/app.R
 b20f2e64f8bd04121d58a599ad5480cb *inst/shiny/rsconnect/shinyapps.io/heapps/shiny.dcf
@@ -47,5 +48,5 @@ d6c15951503a45df2ffba4bde87bc9a5 *man/value3LInd.Rd
 fc73f2631ecb2916fbd9593b1f9e7ee6 *man/value5L.Rd
 efe4dcd5acb245dde3b33e2a308a445e *man/value5LInd.Rd
 9ad06a912bc0ed319e55881500ee588c *tests/testthat/Rplots.pdf
-0059f5703d2031d46f504baaec464a84 *tests/testthat/testthat.R
+319e4adc73a7eeb571d662ebf6251ba1 *tests/testthat/testthat.R
 246578911db3ac109306edf3d16fd565 *vignettes/User_Guide.Rmd

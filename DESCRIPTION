@@ -1,10 +1,10 @@
 Package: valueEQ5D
 Type: Package
 Title: Scoring the EQ-5D Descriptive System
-Version: 0.5.0
+Version: 0.5.1
 Authors@R: c(person("Sheeja", "Manchira Krishnan", , "sheejamk@gmail.com", c("aut", "cre")))
 Maintainer: Sheeja Manchira Krishnan <sheejamk@gmail.com>
-Depends: R (>= 2.10)
+Depends: R (>= 3.5)
 Description: EQ-5D is a standard instrument (<https://euroqol.org/eq-5d-instruments/>) that measures the quality of life 
     often used in clinical and economic evaluations of health care technologies. Both adult versions of EQ-5D (EQ-5D-3L and EQ-5D-5L)
     contain a descriptive system and visual analog scale. The descriptive system measures the patient's health in 5 dimensions: 
@@ -24,7 +24,7 @@ Imports: rstudioapi, testthat, utils
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-11-06 12:05:20 UTC; smk543
+Packaged: 2020-01-23 18:00:13 UTC; smk543
 Author: Sheeja Manchira Krishnan [aut, cre]
 Repository: CRAN
-Date/Publication: 2019-11-06 12:30:02 UTC
+Date/Publication: 2020-01-23 18:20:02 UTC
