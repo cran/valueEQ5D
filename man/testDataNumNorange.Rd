@@ -18,5 +18,5 @@ testDataNumNorange(vec, nrcode = NA)
 Function to check the format of a numeric column when the values are not bounded
 }
 \examples{
-testDataNumNorange(c(1,2,3,4,-99),-99)
+testDataNumNorange(c(1, 2, 3, 4, -99), -99)
 }

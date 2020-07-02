@@ -16,5 +16,5 @@ mode if success -1 for failure
 Function to return mode
 }
 \examples{
-getModeForVec(c(1,1,2,3))
+getModeForVec(c(1, 1, 2, 3))
 }

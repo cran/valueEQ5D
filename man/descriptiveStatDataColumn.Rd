@@ -20,5 +20,5 @@ the descriptive statistics for success , -1 for failure
 Function to return descriptive statistics, sum, no of observations, mean, mode. median, range, standard deviation and standard error
 }
 \examples{
-descriptiveStatDataColumn(c(1,2,3,4,NA),"scores",NA)
+descriptiveStatDataColumn(c(1, 2, 3, 4, NA), "scores", NA)
 }

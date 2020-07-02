@@ -5,38 +5,48 @@ library(valueEQ5D)
 #load your data or create a data table as follows:
 scoreData = read.table(
   text = " Score	Country	Method
+  EQ-5D-3L	Argentina	VAS
   EQ-5D-3L	Belgium	VAS
   EQ-5D-3L	Denmark 	VAS
   EQ-5D-3L	Europe	VAS
   EQ-5D-3L	Finland	VAS
   EQ-5D-3L	Germany	VAS
+  EQ-5D-3L	Malaysia	VAS
   EQ-5D-3L	NewZealand	VAS
   EQ-5D-3L	Slovenia	VAS
   EQ-5D-3L	Spain	VAS
   EQ-5D-3L	UK	VAS
+  EQ-5D-3L	Argentina	TTO
+  EQ-5D-3L	Australia	TTO
   EQ-5D-3L	Brazil	TTO
   EQ-5D-3L	Canada	TTO
   EQ-5D-3L	Chile	TTO
+  EQ-5D-3L	China	TTO
   EQ-5D-3L	Denmark 	TTO
-  EQ-5D-3L	Europe	TTO
   EQ-5D-3L	France	TTO
   EQ-5D-3L	Germany	TTO
   EQ-5D-3L	Italy	TTO
   EQ-5D-3L	Japan	TTO
   EQ-5D-3L	Korea	TTO
+  EQ-5D-3L	Malaysia	TTO
   EQ-5D-3L	Netherlands	TTO
   EQ-5D-3L	Poland	TTO
   EQ-5D-3L	Portugal	TTO
+  EQ-5D-3L	Singapore	TTO
   EQ-5D-3L	Spain	TTO
+  EQ-5D-3L	SriLanka	TTO
+  EQ-5D-3L	Sweden	TTO
   EQ-5D-3L	Taiwan	TTO
   EQ-5D-3L	Thailand	TTO
+  EQ-5D-3L	Trinidad_and_Tobago	TTO
   EQ-5D-3L	UK	TTO
   EQ-5D-3L	USA	TTO
   EQ-5D-3L	Zimbabwe	TTO
-  EQ-5D-3L	Trinidad_and_Tobago	TTO
   EQ-5D-5L	Canada	VT
   EQ-5D-5L	China	VT
   EQ-5D-5L	England 	VT
+  EQ-5D-5L	Ethopia 	VT
+  EQ-5D-5L	France 	VT
   EQ-5D-5L	Germany	VT
   EQ-5D-5L	HongKong	VT
   EQ-5D-5L	Indonesia	VT
@@ -45,12 +55,24 @@ scoreData = read.table(
   EQ-5D-5L	Korea	VT
   EQ-5D-5L	Malaysia	VT
   EQ-5D-5L	Netherlands	VT
+  EQ-5D-5L	Poland 	VT
+  EQ-5D-5L	Portugal 	VT
   EQ-5D-5L	Spain	VT
   EQ-5D-5L	Taiwan	VT
   EQ-5D-5L	Thailand	VT
   EQ-5D-5L	Uruguay	VT 
-  EQ-5D-5L	UK	CW" ,
-
+  EQ-5D-5L	USA	VT
+  EQ-5D-5L	Vietnam	VT
+  EQ-5D-5L	Denmark	CW
+  EQ-5D-5L	France	CW
+  EQ-5D-5L	Germany	CW
+  EQ-5D-5L	Japan	CW
+  EQ-5D-5L	Netherlands	CW
+  EQ-5D-5L	Spain	CW
+  EQ-5D-5L	Thailand	CW
+  EQ-5D-5L	UK	CW
+  EQ-5D-5L	USA	CW
+  EQ-5D-5L	Zimbabwe	CW",
   header = TRUE, stringsAsFactors = FALSE)
 
 ## Only run examples in interactive R sessions

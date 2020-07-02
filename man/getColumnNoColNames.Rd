@@ -18,5 +18,5 @@ column number, if success -1, if failure
 Function to return the column number for column name
 }
 \examples{
-getColumnNoColNames(data.frame(age=rep(20, 4), sex=rep("male", 4)),"sex")
+getColumnNoColNames(data.frame(age = rep(20, 4), sex = rep("male", 4)), "sex")
 }

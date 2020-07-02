@@ -30,11 +30,13 @@ EQ-5D with 3 levels of severity for each of the 5 dimensions: EQ-5D-3L
 EQ-5D with 5 levels of severity for each of the 5 dimensions: EQ-5D-5L
 EQ-5D for use in children: EQ-5D-Y
 
-This package can be used for valuing the adult EQ-5D descriptive system scores - both 5L and 3L for different countries.  EQ-5D-5L scores can be valued for the following countries: Canada,China,England,Germany,Hong Kong,Indonesia,Ireland,Japan, Korea,Malaysia,Netherlands,Poland,Portugal,Spain,Taiwan,Thailand,and Uruguay.
+This package can be used for valuing the adult EQ-5D descriptive system scores - both 5L and 3L for different countries.  EQ-5D-5L scores can be valued for the following countries: Canada,China,England,Ethiopia,France,Germany,Hong Kong,Indonesia,Ireland,Japan, Korea,Malaysia,Netherlands,Poland,Portugal,Spain,Taiwan,Thailand, Uruguay, USA and Vietnam.
 
     Canada: Xie et al (2016) <doi:10.1097/MLR.0000000000000447>
     China:Luo et al (2017) <doi:10.1016/j.jval.2016.11.016>
     England: Devlin et al (2018) <doi:10.1002/hec.3564>
+    Ethiopia: Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
+    France:Andrade et al (2019) <doi::10.1007/s40273-019-00876-4>
     Germany: Ludwig et al (2018) <doi:10.1007/s40273-018-0615-8>
     Hong Kong: Wong et al (2018) <doi:10.1007/s40271-017-0278-0>
     Indonesia: Purba et al (2017) <doi:10.1007/s40273-017-0538-9>
@@ -49,9 +51,11 @@ This package can be used for valuing the adult EQ-5D descriptive system scores -
     Taiwan:  Lin et al (2018)  <https://doi.org/10.1371/journal.pone.0209344>
     Thailand: Pattanaphesaj et al (2018) <doi:10.1080/14737167.2018>
     Uruguay: Augustovski et al (2016) <doi:10.1007/s11136-015-1086-4>
+    USA: Pickard et al (2019) <doi:10.1016/j.jval.2019.02.009>
+    Vietnam: Mai et al (2020) <doi:10.1007/s11136-020-02469-7>
 
     
-EQ-5D-3L scores can be valued for the countries Argentina, Australia,Belgium, Brazil, Canada, Chile, Denmark, Europe, Finland, France, Germany, Italy,Japan,Malaysia, Netherlands, New Zealand,Poland,Portugal,Singapore,Slovenia,Spain,Sri Lanka, South Korea, Sweden, Taiwan,Thailand,Trinidad and Tobago, UK,USA,and Zimbabwe.
+EQ-5D-3L scores can be valued for the countries Argentina, Australia,Belgium, Brazil, Canada, Chile, China, Denmark, Europe, Finland, France, Germany, Iran, Italy,Japan,Korea, Malaysia, Netherlands, New Zealand,Poland,Portugal,Singapore,Slovenia,Spain,Sri Lanka, Sweden, Taiwan,Thailand,Trinidad and Tobago, UK,USA,and Zimbabwe.
 
     Argentina: Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x> 
     Australia: Viney et al (2011) <doi:10.1016/j.jval.2011.04.009>
@@ -67,8 +71,10 @@ EQ-5D-3L scores can be valued for the countries Argentina, Australia,Belgium, Br
     France: Chevalier et al (2013) <doi:10.1007/s10198-011-0351-x>
     Germany (TTO): Greiner et al (2005) <doi:10.1007/s10198-004-0264-z>
     Germany (VAS): Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+    Iran: Goudarzi et al (2019) <doi:10.1016/j.vhri.2019.01.007> 
     Italy: Scalone et al (2013) <http://dx.doi.org/10.1016/j.jval.2013.04.008>
     Japan: Tsuchiya et al (2002) <https://doi.org/10.1002/hec.673>
+    Korea: Lee et al <doi:10.1111/j.1524-4733.2009.00579.x>
     Malaysia: Yusof et al (2019) <doi:10.1016/j.jval.2011.11.024>
     Netherlands: Lamers et al <doi:10.1002/hec.1124>
     New Zealand: Devlin et al <doi:10.1002/hec.741>
@@ -79,11 +85,10 @@ EQ-5D-3L scores can be valued for the countries Argentina, Australia,Belgium, Br
     Spain (TTO): Badia et al (2001) <doi:10.1177/0272989X0102100102>
     Spain (VAS): Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
     Sri Lanka: Kularatna et al (2015) <doi:10.1007/s11136-014-0906-2>
-    South Korea: Lee et al <doi:10.1111/j.1524-4733.2009.00579.x>
     Sweden: Burström et al (2014) <doi:10.1007/s11136-013-0496-4>
     Taiwan: Lee et al (2013) <http://dx.doi.org/10.1016/j.jfma.2012.12.015>
     Thailand: Tongsiri et al (2011) <doi:10.1016/j.jval.2011.06.005>
-    Trinidad and Tobago: Bailey et al (2016) <http://dx.doi.org/10.1016/j.vhri.2016.07.010>
+    Trinidad and Tobago: Bailey et al (2016)     <http://dx.doi.org/10.1016/j.vhri.2016.07.010>
     UK (TTO): Dolan et al (1997) <http://dx.doi.org/10.1097/00005650-199711000-00002>
     UK (VAS): Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
     USA: Shaw et al (2005) <doi:10.1097/00005650-200503000-00003>
@@ -129,6 +134,7 @@ For demonstration purposes, a simulated data set representing treatment and cont
 
 ## Examples- Valuing EQ-5D-3L
 Each of the below calls will give same answer while valuing the EQ-5D-3L individual score 1,2,3,2,2 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.
+
 ```{r }
 ## Valuing EQ-5D-3L individual score
  value3LInd("UK","TTO",1,2,3,2,2)
@@ -154,7 +160,6 @@ result1$modifiedData
 
 Similarly, we can use the options to get the results for particular gender with given age ranges.
 
-
 ```{r }
 result2<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",c(10,70))
 result3<-value3L(EQ5D3Ldata,"eq5d3L.q1","eq5d3L.q2","eq5d3L.q3","eq5d3L.q4","eq5d3L.q5","UK","TTO","male",NULL)
@@ -178,13 +183,11 @@ value5LInd("Indonesia",12345)
 
 When the data is in column format as in example below, use the 'value5L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
 ````{r }
-
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England",NULL,NULL)
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England","male",c(10,70))
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Indonesia","male",NULL)
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Ireland",NULL,c(10,70))
 ```
-
 
 ## Examples- Mapping EQ-5D-5L scores to EQ-5D-3L index values for UK and other countries
 Each of the below calls will give same EQ-5d-3L index values while valuing the EQ-5D-5L individual score 1,2,3,4,5 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.
@@ -197,8 +200,6 @@ map5Lto3LInd("Denmark","CW",12345)
 ```
 When the data is in column format as in example below, use the 'map5Lto3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below.
 ```{r }
-
  map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW",NULL,NULL)
  map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW","male",c(10,70))
-
 ```

@@ -16,5 +16,5 @@ frequency table
 Function to return frequency table
 }
 \examples{
-getFrequencyTable(c(1,1,1,12,2))
+getFrequencyTable(c(1, 1, 1, 12, 2))
 }

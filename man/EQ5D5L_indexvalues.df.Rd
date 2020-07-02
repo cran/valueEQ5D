@@ -3,15 +3,18 @@
 \docType{data}
 \name{EQ5D5L_indexvalues.df}
 \alias{EQ5D5L_indexvalues.df}
-\title{EQ-5D-5L index values
- @note: For testing purpose -not required by users}
-\format{A 3125 by 18 dataframe}
+\title{EQ-5D-5L index values}
+\format{A 3125 by 22 dataframe}
 \source{
 \strong{Canada}: Selected example Table A3 in Xie et al (2016) <doi:10.1097/MLR.0000000000000447>
 
 \strong{China}: Supplementary Material 1 in Luo et al (2017) <doi:10.1016/j.jval.2016.11.016>
 
 \strong{England}: Selected example Table 3 page 18 and supporting information in Devlin et al (2018) <doi:10.1002/hec.3564>
+
+\strong{Ethopia}: Table 3 column 8 page 12 and supporting information in Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
+
+\strong{France}: Table 3 column 2-6 page 12 and supporting information in Andrade et al (2020) <doi::10.1007/s40273-019-00876-4>
 
 \strong{Germany}: Supplementary Material 1 in Ludwig et al (2018) <doi:10.1007/s40273-018-0615-8>
 
@@ -40,12 +43,18 @@
 \strong{Thailand}: Pattanaphesaj et al (2018) <doi:10.1080/14737167.2018>
 
 \strong{Uruguay}: Augustovski et al (2016) <doi:10.1007/s11136-015-1086-4>
+
+\strong{USA}: Pickard et al (2019) <doi:10.1016/j.jval.2019.02.009>
+
+\strong{Vietnam}: Mai et al (2020) <doi:10.1007/s11136-020-02469-7>
 }
 \usage{
 EQ5D5L_indexvalues.df
 }
 \description{
 EQ-5D-5L index values
- @note: For testing purpose -not required by users
+}
+\note{
+: For testing purpose -not required by users
 }
 \keyword{datasets}

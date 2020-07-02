@@ -4,7 +4,7 @@
 \name{EQ5D3L_tariffs_TTO.df}
 \alias{EQ5D3L_tariffs_TTO.df}
 \title{EQ-5D-3L tariffs using TTO for different countries}
-\format{A 38 by 25 dataframe}
+\format{A 38 by 28 dataframe}
 \source{
 \strong{Argentina}: Table 3 column 5 page 560 in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 
@@ -24,11 +24,15 @@
 
 \strong{Germany}: Table 4 column 2 page 129 in Greiner et al (2005) <doi:10.1007/s10198-004-0264-z>
 
+\strong{Iran}: Table 3 column 8 page 174 in  Goudarzi et al (2019) <doi:10.1016/j.vhri.2019.01.007>
+
 \strong{Italy}: Table 4 column 5 page 820 in Scalone et al (2013) <http://dx.doi.org/10.1016/j.jval.2013.04.008>
 
 \strong{Japan}: Table 4 column 1 page 41 in Tsuchiya et al (2002) <https://doi.org/10.1002/hec.673>
 
 \strong{South Korea}: Table 3 column 4 page 1191 in Lee et al <doi:10.1111/j.1524-4733.2009.00579.x>
+
+\strong{Malaysia}: Table 4 column 5 page 588 in Aryani et al <doi:10.1016/j.jval.2011.11.024>
 
 \strong{Netherlands}: Table 5 column 3 page 1128 in Lamers et al <doi:10.1002/hec.1124>
 
@@ -40,7 +44,7 @@
 
 \strong{Spain}: Table 3 column 4 page 13 in Badia et al (2001) <doi:10.1177/0272989X0102100102>
 
-\strong{ Sri Lanka}: Table 2 column 8 page 1791 in  Kularatna et al (2015) <doi:10.1007/s11136-014-0906-2>
+\strong{Sri Lanka}: Table 2 column 8 page 1791 in  Kularatna et al (2015) <doi:10.1007/s11136-014-0906-2>
 
 \strong{Sweden}: Table 2 column 8 page 436 in Burström et al (2014) <doi:10.1007/s11136-013-0496-4>
 

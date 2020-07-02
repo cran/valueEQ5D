@@ -27,7 +27,7 @@ index values  if success, negative values if failure
 Function to value EQ-5D-5L scores for various countries
 }
 \examples{
-value5LInd("England",23434)
-value5LInd("China",2,3,4,3,4)
-value5LInd("Poland",c(1,2,3,4,3))
+value5LInd("England", 23434)
+value5LInd("China", 2, 3, 4, 3, 4)
+value5LInd("Poland", c(1, 2, 3, 4, 3))
 }

@@ -63,7 +63,6 @@ value5LInd("Spain",12345)
 value5LInd("Indonesia",12345)
 
 ## ------------------------------------------------------------------------
-
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England",NULL,NULL)
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","England","male",c(10,70))
 value5L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","Indonesia","male",NULL)
@@ -77,8 +76,6 @@ map5Lto3LInd("UK","CW",c(1,2,3,4,5))
 map5Lto3LInd("Denmark","CW",12345)
 
 ## ------------------------------------------------------------------------
-
  map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW",NULL,NULL)
  map5Lto3L(EQ5D5Ldata,"eq5d5L.q1","eq5d5L.q2","eq5d5L.q3","eq5d5L.q4","eq5d5L.q5","UK","CW","male",c(10,70))
-
 

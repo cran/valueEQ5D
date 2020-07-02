@@ -36,5 +36,6 @@ index value  if success, negative values for failure
 Function to map EQ-5D-5L scores to EQ-5D-3L index values
 }
 \examples{
-map5Lto3L(data.frame(mo=c(1),sc=c(4),ua=c(4),pd=c(3),ad=c(3)), "mo", "sc","ua", "pd", "ad")
+map5Lto3L(data.frame(mo = c(1), sc = c(4), ua = c(4), pd = c(3),
+ ad = c(3)), "mo", "sc", "ua", "pd", "ad")
 }

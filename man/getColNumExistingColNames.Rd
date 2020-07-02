@@ -20,5 +20,5 @@ Function to return the column number for a given column name (from list of possi
 have used) in a data frame
 }
 \examples{
-getColNumExistingColNames(c("age"),data.frame(age=rep(20, 4), gender=rep("male", 4)))
+getColNumExistingColNames(c("age"), data.frame(age = rep(20, 4), gender = rep("male", 4)))
 }

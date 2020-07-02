@@ -22,5 +22,5 @@ Function to check the gender column and age column subset based on the values in
 have used) in a data frame
 }
 \examples{
-subsetGenderAgeToGroup(data.frame(age=rep(20, 4), gender=rep("male", 4)),"male",c(10,70))
+subsetGenderAgeToGroup(data.frame(age = rep(20, 4), gender = rep("male", 4)), "male", c(10, 70))
 }

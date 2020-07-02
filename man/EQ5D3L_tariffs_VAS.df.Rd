@@ -4,7 +4,7 @@
 \name{EQ5D3L_tariffs_VAS.df}
 \alias{EQ5D3L_tariffs_VAS.df}
 \title{EQ-5D-3L tariffs using VAS for different countries}
-\format{A 34 by 17 dataframe}
+\format{A 34 by 12 dataframe}
 \source{
 \strong{Argentina}: Table 3 column 2 page 560 in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 
@@ -24,7 +24,8 @@
 
 \strong{Slovenia}: Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
 
-\strong{Spain}: Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+\strong{Spain}: Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1> (this is not shown in euroqol website)
+Could not get Sweden VAS values
 
 \strong{UK}: Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
 }

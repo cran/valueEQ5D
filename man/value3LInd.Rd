@@ -29,7 +29,7 @@ index value based if success, negative values for failure
 Function to value EQ-5D-3L scores for various countries
 }
 \examples{
-value3LInd("UK","TTO",23131)
-value3LInd("Spain","TTO",2,3,1,3,1)
-value3LInd("Denmark","VAS",c(1,2,3,1,3))
+value3LInd("UK", "TTO", 23131)
+value3LInd("Spain", "TTO", 2, 3, 1, 3, 1)
+value3LInd("Denmark", "VAS", c(1, 2, 3, 1, 3))
 }

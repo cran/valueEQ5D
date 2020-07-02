@@ -29,7 +29,7 @@ index value of EQ-5D-3L, -1 if any error
 Function to map EQ-5D-5L descriptive system to 3L index value (ref:Van Hout et al 2012 and code inspired from https://github.com/brechtdv/eq5d-mapping)
 }
 \examples{
-map5Lto3LInd("UK","CW",11125)
-map5Lto3LInd("UK","CW",c(1,1,1,2,5))
-map5Lto3LInd("UK","CW",1,1,1,2,5)
+map5Lto3LInd("UK", "CW", 11125)
+map5Lto3LInd("UK", "CW", c(1, 1, 1, 2, 5))
+map5Lto3LInd("UK", "CW", 1, 1, 1, 2, 5)
 }

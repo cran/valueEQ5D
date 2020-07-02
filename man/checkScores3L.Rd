@@ -22,8 +22,8 @@ checkScores3L(dimen, dimen2 = NA, dimen3 = NA, dimen4 = NA,
 Function to check the EQ-5D-3L scores
 }
 \examples{
-checkScores3L(c(1,2,3,3,3))
-checkScores3L(1,2,3,3,3)
-checkScores3L(1,2,3,2,3)
+checkScores3L(c(1, 2, 3, 3, 3))
+checkScores3L(1, 2, 3, 3, 3)
+checkScores3L(1, 2, 3, 2, 3)
 checkScores3L(12323)
 }

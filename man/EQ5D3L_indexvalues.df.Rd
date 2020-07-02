@@ -4,11 +4,15 @@
 \name{EQ5D3L_indexvalues.df}
 \alias{EQ5D3L_indexvalues.df}
 \title{EQ-5D-3L index values (for each set of response of 3L) for different countries}
-\format{A  243 by 37 dataframe}
+\format{A  243 by 38 dataframe}
 \source{
-\strong{Argentina}: Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
+\strong{Argentina}: TTO - Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
+
+\strong{Argentina}: VAS - Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 
 \strong{Australia}: Supplementary in Viney et al (2011) <doi:10.1016/j.jval.2011.04.009>
+
+\strong{Belgium}: VAS - Selected example page 209 in Cleemput et al (2010) <doi:10.1007/s10198-009-0167-0>
 
 \strong{Brazil}: Appendix 1 in Santos et al (2016) <doi:10.1177/0272989X15613521>
 
@@ -20,27 +24,45 @@
 
 \strong{Denmark}: TTO - Appendix in Wittrup-Jensen et al (2009) <doi:10.1177/1403494809105287>
 
+\strong{Denmark}: VAS -  Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
+\strong{Europe}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
+\strong{Finland}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
 \strong{France}: Selected example  page 61 in Chevalier et al (2013) <doi:10.1007/s10198-011-0351-x>
 
 \strong{Germany}: TTO - Selected examples Table 6 page 130 in Greiner et al (2005) <doi:10.1007/s10198-004-0264-z>
+
+\strong{Germany}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
+\strong{Iran}: Selected example  page 173 in  Goudarzi et al (2019) <doi:10.1016/j.vhri.2019.01.007>
 
 \strong{Italy}: Supplementary materials Appendix 2 in Scalone et al (2013) <http://dx.doi.org/10.1016/j.jval.2013.04.008>
 
 \strong{Japan}: Tsuchiya et al (2002) <https://doi.org/10.1002/hec.673>
 
+\strong{Korea}: Selected example page 1191 in Lee et al <doi:10.1111/j.1524-4733.2009.00579.x>
+
+\strong{Malaysia}: VAS - Supplementary material Appendix 3 in Yusof et al (2019) <doi:10.1016/j.jval.2011.11.024>
+
 \strong{Netherlands}: Lamers et al <doi:10.1002/hec.1124>
+
+\strong{New Zealand}: VAS - Selected examples Table 7 column 5 page 542 in Devlin et al <doi:10.1002/hec.741>
 
 \strong{Poland}: Table 6 page 294 in Golicki et al <https://doi.org/10.1111/j.1524-4733.2009.00596.x>
 
 \strong{Portugal}: Supplementary Material 1 in Ferreira et al <doi:10.1007/s11136-013-0448-z>
 
+\strong{Slovenia}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
 \strong{Singapore}: Selected examples in Nan Luo et al <doi:10.1007/s40273-014-0142-1>
 
-\strong{Spain}: Badia et al (2001) <doi:10.1177/0272989X0102100102>
+\strong{Spain}: TTO- Badia et al (2001) <doi:10.1177/0272989X0102100102>
+
+\strong{Spain}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
 
 \strong{Sri Lanka}: Selected example page 1789 in  Kularatna et al (2015) <doi:10.1007/s11136-014-0906-2>
-
-\strong{South Korea}: Selected example page 1191 in Lee et al <doi:10.1111/j.1524-4733.2009.00579.x>
 
 \strong{Sweden}: Supplementary Table 3 in Burström et al (2014) <doi:10.1007/s11136-013-0496-4>
 
@@ -52,31 +74,11 @@
 
 \strong{UK} : TTO - Selected examples Table 3  page 1105 in Dolan et al (1997) <http://dx.doi.org/10.1097/00005650-199711000-00002>
 
+\strong{UK}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
+
 \strong{USA}: Appendix 1 page 218 in Shaw et al (2005) <doi:10.1097/00005650-200503000-00003>
 
 \strong{Zimbabwe}: Jelsma et al (2003) <https://doi.org/10.1186/1478-7954-1-11>
-
-\strong{Argentina}: VAS - Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
-
-\strong{Belgium}: VAS - Selected example page 209 in Cleemput et al (2010) <doi:10.1007/s10198-009-0167-0>
-
-\strong{Denmark}: VAS -  Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{Europe}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{Finland}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{Germany}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{Malaysia}: VAS - Supplementary material Appendix 3 in Yusof et al (2019) <doi:10.1016/j.jval.2011.11.024>
-
-\strong{New Zealand}: VAS - Selected examples Table 7 column 5 page 542 in Devlin et al <doi:10.1002/hec.741>
-
-\strong{Slovenia}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{Spain}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
-
-\strong{UK}: VAS - Table 2.3 page 14 in Szende et al (2014) <doi:10.1007/978-94-007-7596-1>
 }
 \usage{
 EQ5D3L_indexvalues.df
