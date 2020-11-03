@@ -4,7 +4,9 @@
 \name{EQ5D3L_tariffs_TTO.df}
 \alias{EQ5D3L_tariffs_TTO.df}
 \title{EQ-5D-3L tariffs using TTO for different countries}
-\format{A 38 by 28 dataframe}
+\format{
+A 38 by 28 dataframe
+}
 \source{
 \strong{Argentina}: Table 3 column 5 page 560 in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 

@@ -4,7 +4,9 @@
 \name{EQ5D3L_tariffs_VAS.df}
 \alias{EQ5D3L_tariffs_VAS.df}
 \title{EQ-5D-3L tariffs using VAS for different countries}
-\format{A 34 by 12 dataframe}
+\format{
+A 34 by 12 dataframe
+}
 \source{
 \strong{Argentina}: Table 3 column 2 page 560 in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 

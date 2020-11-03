@@ -4,7 +4,9 @@
 \name{EQ5D5L_tariffs.df}
 \alias{EQ5D5L_tariffs.df}
 \title{EQ-5D-5L tariffs for different countries}
-\format{A 34 by 22 dataframe}
+\format{
+A 34 by 22 data frame
+}
 \source{
 \strong{Canada}: Table 2 column 5 page 103 in Xie et al (2016) <doi:10.1097/MLR.0000000000000447>
 
@@ -12,7 +14,7 @@
 
 \strong{England}: Table 2 column 2 page 17 in Devlin et al (2018) <doi:10.1002/hec.3564>
 
-\strong{Ethopia}: Table 3 column 8 page 12 in Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
+\strong{Ethiopia}: Table 3 column 8 page 12 in Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
 
 \strong{France}: Table 3 column 2-6 page 12 in Andrade et al (2019) <doi::10.1007/s40273-019-00876-4>
 

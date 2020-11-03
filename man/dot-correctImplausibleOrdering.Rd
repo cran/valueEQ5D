@@ -2,7 +2,7 @@
 % Please edit documentation in R/eq5d.R
 \name{.correctImplausibleOrdering}
 \alias{.correctImplausibleOrdering}
-\title{Function to correct the implausible ordering in Australian valueset for EQ-5D-3L}
+\title{Function to correct implausible ordering in Australian valueset for EQ-5D-3L}
 \usage{
 .correctImplausibleOrdering(scores)
 }

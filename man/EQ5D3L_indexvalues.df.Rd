@@ -4,7 +4,9 @@
 \name{EQ5D3L_indexvalues.df}
 \alias{EQ5D3L_indexvalues.df}
 \title{EQ-5D-3L index values (for each set of response of 3L) for different countries}
-\format{A  243 by 38 dataframe}
+\format{
+A  243 by 38 dataframe
+}
 \source{
 \strong{Argentina}: TTO - Appendix A in Augustovski et al (2009) <doi:10.1111/j.1524-4733.2008.00468.x>
 

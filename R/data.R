@@ -46,11 +46,11 @@
 "EQ5D3L_tariffs_VAS.df"
 
 #' EQ-5D-5L tariffs for different countries
-#' @format A 34 by 22 dataframe
+#' @format A 34 by 22 data frame
 #' @source \strong{Canada}: Table 2 column 5 page 103 in Xie et al (2016) <doi:10.1097/MLR.0000000000000447>
 #' @source \strong{China}: Table 4 column 4 page 667 in Luo et al (2017) <doi:10.1016/j.jval.2016.11.016>
 #' @source \strong{England}: Table 2 column 2 page 17 in Devlin et al (2018) <doi:10.1002/hec.3564>
-#' @source \strong{Ethopia}: Table 3 column 8 page 12 in Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
+#' @source \strong{Ethiopia}: Table 3 column 8 page 12 in Welie et al (2019) <doi:10.1016/j.vhri.2019.08.475>
 #' @source \strong{France}: Table 3 column 2-6 page 12 in Andrade et al (2019) <doi::10.1007/s40273-019-00876-4>
 #' @source \strong{Germany}: Table column 9 page 670 in Ludwig et al (2018) <doi:10.1007/s40273-018-0615-8>
 #' @source \strong{Hong Kong}: Table 3 column 8 page 244 in Wong et al (2018) <doi:10.1007/s40271-017-0278-0>

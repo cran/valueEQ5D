@@ -4,7 +4,9 @@
 \name{EQ5D5L_indexvalues.df}
 \alias{EQ5D5L_indexvalues.df}
 \title{EQ-5D-5L index values}
-\format{A 3125 by 22 dataframe}
+\format{
+A 3125 by 22 dataframe
+}
 \source{
 \strong{Canada}: Selected example Table A3 in Xie et al (2016) <doi:10.1097/MLR.0000000000000447>
 

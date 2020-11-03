@@ -7,7 +7,7 @@ This package can be used for valuing the adult EQ-5D descriptive system scores -
 
 User needs to provide the column names of the data where the responses to EQ-5D questions are recorded. The modified data with the index values can be downloaded after analysis. The age and gender specific analysis can also be obtained.
 
-Additionally there is a shiny web app which can be accessed at [shinyapps.io]https://heapps.shinyapps.io/shiny_app/) 
+Additionally there is a shiny web app which can be accessed at [shinyapps.io]  https://heapps.shinyapps.io/ScoreEQ5D/) 
 
 
 **Usage**<br/>
@@ -19,3 +19,7 @@ You can install the released version from [CRAN](https://CRAN.R-project.org) wit
 install.packages("valueEQ5D") 
 
 Alternatively, the latest release can be installed from www.github.com/sheejamk/valueEQ5D
+
+<!-- badges: start -->
+  [![Codecov test coverage](https://codecov.io/gh/sheejamk/valueEQ5D/branch/master/graph/badge.svg)](https://codecov.io/gh/sheejamk/valueEQ5D?branch=master)
+  <!-- badges: end -->

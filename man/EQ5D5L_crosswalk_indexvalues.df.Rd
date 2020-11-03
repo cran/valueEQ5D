@@ -4,7 +4,9 @@
 \name{EQ5D5L_crosswalk_indexvalues.df}
 \alias{EQ5D5L_crosswalk_indexvalues.df}
 \title{EQ-5D-5L crosswalk value sets for 10 countries}
-\format{A 3125 by 11 dataframe}
+\format{
+A 3125 by 11 dataframe
+}
 \source{
 https://euroqol.org/eq-5d-instruments/eq-5d-5l-about/valuation-standard-value-sets/crosswalk-index-value-calculator/ (accessed on Aug 03,2019)
 
