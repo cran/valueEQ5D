@@ -26,6 +26,8 @@ A 38 by 28 dataframe
 
 \strong{Germany}: Table 4 column 2 page 129 in Greiner et al (2005) <doi:10.1007/s10198-004-0264-z>
 
+\strong{Hungary}: Table 2 column 11 page 1238 in  Rencz et al (2020) <doi:10.1016/j.jval.2020.03.019>
+
 \strong{Iran}: Table 3 column 8 page 174 in  Goudarzi et al (2019) <doi:10.1016/j.vhri.2019.01.007>
 
 \strong{Italy}: Table 4 column 5 page 820 in Scalone et al (2013) <http://dx.doi.org/10.1016/j.jval.2013.04.008>

@@ -20,9 +20,10 @@ knitr::opts_chunk$set(
 library(valueEQ5D)
 ```
 ## valueEQ5D
+
 EQ-5D is a standardized instrument developed by the EuroQol(R) Group as a measure of health-related quality of life that can be used in a wide range of health conditions and treatments (https://euroqol.org/eq-5d-instruments/). The EQ-5D consists of a descriptive system and a visual analog scale (VAS).
 
-The descriptive system comprises five dimensions: mobility, self-care, usual activities, pain/discomfort and anxiety/depression. The EQ-5D VAS records the patient’s self-rated health on a vertical visual analogue scale. This can be used as a quantitative measure of health outcome that reflects the patient’s own judgement. The scores on these five dimensions can be presented as a health profile or can be converted to a single summary index number (utility) reflecting preferability compared to other health profiles.
+The descriptive system comprises five dimensions: mobility, self-care, usual activities, pain/discomfort and anxiety/depression. The EQ-5D VAS records the patients' self-rated health on a vertical visual analogue scale. This can be used as a quantitative measure of health outcome that reflects the patients' own judgment. The scores on these five dimensions can be presented as a health profile or can be converted to a single summary index number (utility) reflecting preferably compared to other health profiles.
 
 Currently three versions of EQ-5D exist:
 
@@ -30,7 +31,7 @@ EQ-5D with 3 levels of severity for each of the 5 dimensions: EQ-5D-3L
 EQ-5D with 5 levels of severity for each of the 5 dimensions: EQ-5D-5L
 EQ-5D for use in children: EQ-5D-Y
 
-This package can be used for valuing the adult EQ-5D descriptive system scores - both 5L and 3L for different countries. EQ-5D-5L scores can be valued for the following countries: Canada, China, England, Ethiopia, France, Germany, Hong Kong, Indonesia, Ireland, Japan, Korea, Malaysia, Netherlands, Poland, Portugal, Spain, Taiwan, Thailand, Uruguay, USA and Vietnam.
+This package can be used for valuing the adult EQ-5D descriptive system scores - both 5L and 3L for different countries. EQ-5D-5L scores can be valued for the following countries: Canada, China, England, Ethiopia, France, Germany, Hong Kong, Hungary, Indonesia, Ireland, Japan, Korea, Malaysia, Netherlands, Poland, Portugal, Spain, Taiwan, Thailand, Uruguay, USA and Vietnam.
 
  Canada: Xie et al (2016) \doi:10.1097/MLR.0000000000000447
  China:Luo et al (2017) \doi:10.1016/j.jval.2016.11.016
@@ -39,6 +40,7 @@ This package can be used for valuing the adult EQ-5D descriptive system scores -
  France:Andrade et al (2019) \doi::10.1007/s40273-019-00876-4
  Germany: Ludwig et al (2018) \doi:10.1007/s40273-018-0615-8
  Hong Kong: Wong et al (2018) \doi:10.1007/s40271-017-0278-0
+ Hungary:Rencz et al (2020) \doi:10.1016/j.jval.2020.03.019
  Indonesia: Purba et al (2017) \doi:10.1007/s40273-017-0538-9
  Ireland: Hobbins et al (2016) \doi:10.1007/s40273-018-0690-x
  Japan: Shiroiwa, et al (2016) \doi:10.1016/j.jval.2016.03.1834
@@ -55,7 +57,7 @@ This package can be used for valuing the adult EQ-5D descriptive system scores -
  Vietnam: Mai et al (2020) \doi:10.1007/s11136-020-02469-7
 
  
-EQ-5D-3L scores can be valued for the countries Argentina, Australia, Belgium, Brazil, Canada, Chile, China, Denmark, Europe, Finland, France, Germany, Iran, Italy, Japan, Korea, Malaysia, Netherlands, New Zealand, Poland, Portugal, Singapore, Slovenia, Spain, Sri Lanka, Sweden, Taiwan, Thailand, Trinidad and Tobago, UK, USA, and Zimbabwe.
+EQ-5D-3L scores can be valued for the countries Argentina, Australia, Belgium, Brazil, Canada, Chile, China, Denmark, Europe, Finland, France, Germany, Hungary, Iran, Italy, Japan, Korea, Malaysia, Netherlands, New Zealand, Poland, Portugal, Singapore, Slovenia, Spain, Sri Lanka, Sweden, Taiwan, Thailand, Trinidad and Tobago, UK, USA, and Zimbabwe.
 
  Argentina: Augustovski et al (2009) \doi:10.1111/j.1524-4733.2008.00468.x 
  Australia: Viney et al (2011) \doi:10.1016/j.jval.2011.04.009
@@ -71,6 +73,7 @@ EQ-5D-3L scores can be valued for the countries Argentina, Australia, Belgium, B
  France: Chevalier et al (2013) \doi:10.1007/s10198-011-0351-x
  Germany (TTO): Greiner et al (2005) \doi:10.1007/s10198-004-0264-z
  Germany (VAS): Szende et al (2014) \doi:10.1007/978-94-007-7596-1
+ Hungary (TTO): Rencz et al (2020) \doi:10.1016/j.jval.2020.03.019
  Iran: Goudarzi et al (2019) \doi:10.1016/j.vhri.2019.01.007 
  Italy: Scalone et al (2013) \http://dx.doi.org/10.1016/j.jval.2013.04.008
  Japan: Tsuchiya et al (2002) \https://doi.org/10.1002/hec.673
@@ -122,7 +125,7 @@ For demonstration purposes, a simulated data set representing treatment and cont
  
  ## EQ-5D-5L data
  set.seed(17)
- EQ5D5Ldata <- data.frame(age=abs(rnorm(10, 60, 20)), 
+ EQ5D5Ldata <- data.frame(age = abs(rnorm(10, 60, 20)), 
        sex = factor(sample(c("M", "F"), 10, replace = T)), 
        arm = factor(sample(c("Control", "Intervention"), 10, replace = T)), 
         eq5d5L.q1 = (sample(c(1, 2, 3, 4, 5), 10, replace = T)), 

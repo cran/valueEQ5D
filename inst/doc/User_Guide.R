@@ -21,7 +21,7 @@ library(valueEQ5D)
  
  ## EQ-5D-5L data
  set.seed(17)
- EQ5D5Ldata <- data.frame(age=abs(rnorm(10, 60, 20)), 
+ EQ5D5Ldata <- data.frame(age = abs(rnorm(10, 60, 20)), 
        sex = factor(sample(c("M", "F"), 10, replace = T)), 
        arm = factor(sample(c("Control", "Intervention"), 10, replace = T)), 
         eq5d5L.q1 = (sample(c(1, 2, 3, 4, 5), 10, replace = T)), 

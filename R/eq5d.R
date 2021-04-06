@@ -127,7 +127,7 @@ value_5L_Ind <- function(country, dimen, dimen2 = NA, dimen3 = NA, dimen4 = NA,
                          dimen5 = NA) {
   country_list <- c(
     "Canada", "China", "England", "Ethiopia", "France", "Germany", "Hong_Kong", 
-    "Indonesia", "Ireland", "Japan", "Korea", "Malaysia", "Netherlands", 
+    "Hungary", "Indonesia", "Ireland", "Japan", "Korea", "Malaysia", "Netherlands", 
     "Poland", "Portugal", "Spain", "Taiwan", "Thailand", "Uruguay", "USA",
     "Vietnam"
   )
@@ -310,7 +310,7 @@ value_3L_Ind <- function(country, method, dimen, dimen2 = NA, dimen3 = NA,
                          dimen4 = NA, dimen5 = NA) {
   countrylist <- c(
     "Argentina", "Australia", "Belgium", "Brazil", "Canada", "Chile", "China",
-    "Denmark", "Europe", "Finland", "France", "Germany", "Iran", "Italy", 
+    "Denmark", "Europe", "Finland", "France", "Germany", "Hungary","Iran", "Italy", 
     "Japan",
     "Korea", "Malaysia", "Netherlands", "New_Zealand", "Poland", "Portugal", 
     "Singapore", "Slovenia", "Spain", "Sri_Lanka", "Sweden",
@@ -324,7 +324,7 @@ value_3L_Ind <- function(country, method, dimen, dimen2 = NA, dimen3 = NA,
   )
   TTO_countrylist <- c(
     "Argentina", "Australia", "Brazil", "Canada", "Chile", "China", "Denmark",
-    "France", "Germany", "Iran", "Italy", "Japan", "Korea", "Netherlands", 
+    "France", "Germany", "Hungary", "Iran", "Italy", "Japan", "Korea", "Netherlands", 
     "Poland",
     "Portugal", "Singapore", "Spain", "Sri_Lanka", "Sweden",
     "Taiwan", "Thailand", "Trinidad_and_Tobago", "UK", "USA", "Zimbabwe"

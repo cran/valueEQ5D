@@ -9,6 +9,7 @@
 #' @source \strong{Denmark}: Table 4 column 2 page 463 in Wittrup-Jensen et al (2009) <doi:10.1177/1403494809105287>
 #' @source \strong{France}: Equation page 61 in Chevalier et al (2013) <doi:10.1007/s10198-011-0351-x>
 #' @source \strong{Germany}: Table 4 column 2 page 129 in Greiner et al (2005) <doi:10.1007/s10198-004-0264-z>
+#' @source \strong{Hungary}: Table 2 column 11 page 1238 in  Rencz et al (2020) <doi:10.1016/j.jval.2020.03.019>
 #' @source \strong{Iran}: Table 3 column 8 page 174 in  Goudarzi et al (2019) <doi:10.1016/j.vhri.2019.01.007>
 #' @source \strong{Italy}: Table 4 column 5 page 820 in Scalone et al (2013) <http://dx.doi.org/10.1016/j.jval.2013.04.008>
 #' @source \strong{Japan}: Table 4 column 1 page 41 in Tsuchiya et al (2002) <https://doi.org/10.1002/hec.673>
@@ -54,6 +55,7 @@
 #' @source \strong{France}: Table 3 column 2-6 page 12 in Andrade et al (2019) <doi::10.1007/s40273-019-00876-4>
 #' @source \strong{Germany}: Table column 9 page 670 in Ludwig et al (2018) <doi:10.1007/s40273-018-0615-8>
 #' @source \strong{Hong Kong}: Table 3 column 8 page 244 in Wong et al (2018) <doi:10.1007/s40271-017-0278-0>
+#' @source \strong{Hungary}: Table 3 column 14 page 1241 in  Rencz et al (2020) <doi:10.1016/j.jval.2020.03.019>
 #' @source \strong{Indonesia}: Table 3 column 8 page 1162 in Purba et al (2017) <doi:10.1007/s40273-017-0538-9>
 #' @source \strong{Ireland}: Table 2 column 2 page 1348 in Hobbins et al (2016) <doi:10.1007/s40273-018-0690-x>
 #' @source \strong{Japan}: Table 2 column 7 page 651 in Shiroiwa, et al (2016) <doi:10.1016/j.jval.2016.03.1834>

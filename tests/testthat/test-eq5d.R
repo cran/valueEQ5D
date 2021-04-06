@@ -129,6 +129,12 @@ test_that("EQ5D5L scoring for individual responses", {
                "No tariffs found for the country you specified for EQ-5D-5L. Please try later", fixed = TRUE)
   expect_error(value_5L_Ind("England", "sh"), 
                "The responses are not valid", fixed = TRUE)
+  the_result <- value_5L_Ind("Hungary", 11111)
+  expect_equal(the_result, 1)
+  the_result <- value_5L_Ind("Hungary", 55555)
+  expect_equal(the_result, -0.848)
+  the_result <- value_5L_Ind("Hungary", 33333)
+  expect_equal(the_result, 0.571)
 })
 # # # ###########################################################################
 context("testing EQ5D3L valuation for individual responses")
@@ -300,6 +306,14 @@ test_that("test for value_3L", {
                "The responses are not valid", fixed = TRUE)
   expect_error(value_3L_Ind("JP", "VAS", c(1, 2, 3, 2, 3)), 
                "No country tariffs found for the country you specified for EQ-5D-3L. Please try later", fixed = TRUE)
+  the_result <- value_3L_Ind("Hungary", "TTO", 12321)
+  expect_equal(the_result, 0.603)
+  the_result <- value_3L_Ind("Hungary", "TTO", 11111)
+  expect_equal(the_result, 0.980)
+  the_result <- value_3L_Ind("Hungary", "TTO", 22222)
+  expect_equal(the_result, 0.724)
+  the_result <- value_3L_Ind("Hungary", "TTO", 33333)
+  expect_equal(the_result, -0.865)
 })
 
 # # # ###########################################################################
@@ -330,7 +344,7 @@ test_that("EQ5D5L scoring for all countries", {
   total_entries <- seq(1, nrow(answers))
   total_countries <- c(
     "Canada", "China", "England", "Ethiopia", "France", "Germany", "Hong_Kong", 
-    "Indonesia", "Ireland",
+    "Hungary", "Indonesia", "Ireland",
     "Japan", "Korea", "Malaysia", "Netherlands", "Poland", "Portugal", "Spain", 
     "Taiwan", "Thailand",
     "Uruguay", "USA", "Vietnam"
@@ -359,7 +373,7 @@ test_that("EQ5D3L scoring for all countries", {
   )
   TTO_countrylist <- c(
     "Argentina", "Australia", "Brazil", "Canada", "Chile", "China", "Denmark",
-    "France", "Germany", "Iran", "Italy", "Japan", "Korea", "Netherlands", 
+    "France", "Germany", "Hungary", "Iran", "Italy", "Japan", "Korea", "Netherlands", 
     "Poland", "Portugal", "Singapore", "Spain", "Sri_Lanka", "Sweden",
     "Taiwan", "Thailand", "Trinidad_and_Tobago", "UK", "USA", "Zimbabwe"
   )

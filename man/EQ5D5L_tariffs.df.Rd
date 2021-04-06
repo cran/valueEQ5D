@@ -22,6 +22,8 @@ A 34 by 22 data frame
 
 \strong{Hong Kong}: Table 3 column 8 page 244 in Wong et al (2018) <doi:10.1007/s40271-017-0278-0>
 
+\strong{Hungary}: Table 3 column 14 page 1241 in  Rencz et al (2020) <doi:10.1016/j.jval.2020.03.019>
+
 \strong{Indonesia}: Table 3 column 8 page 1162 in Purba et al (2017) <doi:10.1007/s40273-017-0538-9>
 
 \strong{Ireland}: Table 2 column 2 page 1348 in Hobbins et al (2016) <doi:10.1007/s40273-018-0690-x>
