@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 library(valueEQ5D)
 ```
 ## valueEQ5D
@@ -111,7 +111,7 @@ Whenever the EQ-5D-5L responses are taken as input parameters, code checks if th
 
 ## Data
 For demonstration purposes, a simulated data set representing treatment and control arm of randomised controlled trial will be used. If any of the responses are invalid i.e other than 1 to 5 for EQ-5D-5L or 1 to 3 for EQ-5D-3L, it will throw error and return -1.
-```{r }
+```{r, echo = FALSE}
 ## EQ-5D-3L data
  set.seed(17)
  EQ5D3Ldata <- data.frame(age = abs(rnorm(10, 60, 20)), 
@@ -138,7 +138,7 @@ For demonstration purposes, a simulated data set representing treatment and cont
 ## Examples- Valuing EQ-5D-3L
 Each of the below calls will give same answer while valuing the EQ-5D-3L individual score 1, 2, 3, 2, 2 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.
 
-```{r }
+```{r, echo = FALSE }
 ## Valuing EQ-5D-3L individual score
  value_3L_Ind("UK", "TTO", 1, 2, 3, 2, 2)
  value_3L_Ind("UK", "VAS", c(1, 2, 3, 2, 2))
@@ -146,7 +146,7 @@ Each of the below calls will give same answer while valuing the EQ-5D-3L individ
 ```
 
 When the data is in column format as in example below, use the 'value3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
-```{r }
+```{r, echo = FALSE }
 
 result1 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q4", "eq5d3L.q5", "UK", "TTO", NULL, NULL)
 
@@ -154,7 +154,7 @@ result1 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q
 
 The results can be called using the stats, frequencyTable, histogram and modifiedData which are given below.
 
-```{r }
+```{r, echo = FALSE }
 result1$stats
 result1$frequencyTable
 result1$histogram
@@ -163,7 +163,7 @@ result1$modifiedData
 
 Similarly, we can use the options to get the results for particular gender with given age ranges.
 
-```{r }
+```{r, echo = FALSE }
 result2 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q4", "eq5d3L.q5", "UK", "TTO", "male", c(10, 70))
 result3 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q4", "eq5d3L.q5", "UK", "TTO", "male", NULL)
 result4 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q4", "eq5d3L.q5", "UK", "TTO", NULL, c(10, 70))
@@ -172,7 +172,7 @@ result4 <- value_3L(EQ5D3Ldata, "eq5d3L.q1", "eq5d3L.q2", "eq5d3L.q3", "eq5d3L.q
 
 ## Examples- Valuing EQ-5D-5L
 Similarly, each of the below calls values EQ-5D-5L individual score 1, 2, 3, 4, 5 for mobility, self care, social activity, pain and discomfort, and anxiety respectively. For EQ-5D-5L, no method to be given explicitly.
-```{r }
+```{r, echo = FALSE }
 ## Valuing EQ-5D-5L individual score
 
 value_5L_Ind("England", 1, 2, 3, 4, 5)
@@ -184,7 +184,7 @@ value_5L_Ind("Indonesia", 12345)
 ```
 
 When the data is in column format as in example below, use the 'value_5L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below. This will provide the summary statistics, frequency table, histogram and modified data
-````{r }
+```{r, echo = FALSE }
 value_5L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L.q5", "England", NULL, NULL)
 value_5L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L.q5", "England", "male", c(10, 70))
 value_5L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L.q5", "Indonesia", "male", NULL)
@@ -193,7 +193,7 @@ value_5L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L
 
 ## Examples- Mapping EQ-5D-5L scores to EQ-5D-3L index values for UK and other countries
 Each of the below calls will give same EQ-5d-3L index values while valuing the EQ-5D-5L individual score 1, 2, 3, 4, 5 for mobility, self care, social activity, pain and discomfort, and anxiety respectively.
-```{r }
+```{r, echo = FALSE }
 ## Valuing EQ-5D-5L individual score
 
 map_5Lto3L_Ind("UK", "CW", 1, 2, 3, 4, 5)
@@ -201,7 +201,7 @@ map_5Lto3L_Ind("UK", "CW", c(1, 2, 3, 4, 5))
 map_5Lto3L_Ind("Denmark", "CW", 12345)
 ```
 When the data is in column format as in example below, use the 'map_5Lto3L' to get the summary statistics while returning back the modified data. Use conditions if the results need to be based on a particular gender or particular age group as in the examples below.
-```{r }
+```{r, echo = FALSE }
  map_5Lto3L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L.q5", "UK", "CW", NULL, NULL)
  map_5Lto3L(EQ5D5Ldata, "eq5d5L.q1", "eq5d5L.q2", "eq5d5L.q3", "eq5d5L.q4", "eq5d5L.q5", "UK", "CW", "male", c(10, 70))
 ```

@@ -1,4 +1,4 @@
-9ea3101d2add6367be43c0769da62477 *DESCRIPTION
+952bcf0900cbd41a4e0ed7b52e198e38 *DESCRIPTION
 929ec9622aa0a3f973d76b56ec7c781f *NAMESPACE
 c930d3be3567282c78fd49854ad9ac10 *R/basic_checks.R
 4e87ebe9787781e5aec0e77e8bb52a93 *R/data.R
@@ -14,9 +14,9 @@ a6670fdac7d73a1c559a32f25d0ba19f *data/EQ5D5L_crosswalk_indexvalues.df.rda
 d091c51f6b25804234df1ab708fe02b0 *data/EQ5D5L_indexvalues.df.rda
 5872fadb964541a52421413bf1e8a81c *data/EQ5D5L_tariffs.df.rda
 1583c650591478a242b8045520b613b7 *data/Probability_matrix_crosswalk.df.rda
-9951e7861c45a1ebed52ff7581cfb03d *inst/doc/User_Guide.R
-03608ac40c1595afba706752dbd78384 *inst/doc/User_Guide.Rmd
-a587b8e158003358835f0866d568cf17 *inst/doc/User_Guide.html
+9b1ba7fb83fbccdc25b5642ab6ef3d21 *inst/doc/User_Guide.R
+1e33697a12aa3a37cb0ade11b09e89ec *inst/doc/User_Guide.Rmd
+c29f9747b900708e84f456714b112715 *inst/doc/User_Guide.html
 d41d8cd98f00b204e9800998ecf8427e *inst/extdata/blank.txt
 d41d8cd98f00b204e9800998ecf8427e *inst/extdata/blank_notreadable.txt
 1913e18361313f2e0a0a0c3dd25a9068 *man/EQ5D3L_indexvalues.df.Rd
@@ -49,4 +49,4 @@ f2ba1c223d6ce59ff4d24aaefebcbfaa *man/value_5L.Rd
 eb0c1fcb4293ccf2836455356e854fc2 *tests/testthat.R
 8afe4adc3ca4cce6a9a258dd5862d107 *tests/testthat/test-basic_checks.R
 6ad8eae9180cf1880c1d5db0ef8bd219 *tests/testthat/test-eq5d.R
-03608ac40c1595afba706752dbd78384 *vignettes/User_Guide.Rmd
+1e33697a12aa3a37cb0ade11b09e89ec *vignettes/User_Guide.Rmd
